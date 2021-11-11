@@ -1,0 +1,62 @@
+#centro {
+    margin-top: 30px;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+body {
+    background-image: url('/img/backG.png');
+    background-size: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    margin-top: 30px;
+    height: 800px;
+    position: relative;
+    border: 8px solid whitesmoke;
+    margin-bottom: 20px;
+}
+
+form {
+    margin: auto;
+}
+
+h1 {
+    margin-bottom: 0;
+    margin-top: 25px;
+    text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.50);
+}
+
+img {
+    border-radius: 10px;
+}
+
+label {
+    font-size: 20pt;
+    color: white;
+    text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.50);
+}
+
+.botao {
+    background-color: #1199EE;
+    border-radius: 20px;
+    color: white;
+    width: 100px;
+}
+
+.botao:hover {
+    opacity: 90%;
+}
+
+.campo {
+    border-radius: 20px;
+}
+
+.radio {
+    font-size: 15pt;
+    padding-right: 10px;
+    padding-top: 10px;
+}

@@ -1,0 +1,152 @@
+body {
+    background-image: url(/img/backG.png);
+    background-size: 100%;
+    width: 100%;
+    height: 600px;
+    overflow-x: hidden;
+     font-family: 'Roboto', sans-serif;
+}
+
+/* Título e fundo */
+
+h1, .fundo {
+    text-align: center;
+    color: rgba(27, 116, 68, 0.6);
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-style: italic;
+    font-size: 24px;
+    font-weight: 900;
+    margin-top: 5px;
+    width: 272px;
+    top: 6px;
+    border-radius: 15px;
+    margin: auto;
+    display: block;
+    padding-bottom: 3px;
+}
+
+/* Footer */
+
+footer {
+    background-color: white;
+    padding: 18px;
+    margin-top: 35px;
+    color: rgb(64, 143, 45);
+}
+
+footer a {
+    margin-bottom: 35px;
+}
+
+/* Fontes */
+
+label {
+    letter-spacing: 1px;
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+/* Caixas de texto */
+
+.box {
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+}
+
+.font {
+    font-size: 16px;
+    font-weight: 900;
+}
+
+/* Checkbox */
+
+#myCheck {
+    min-width: 20px;
+    min-height: 20px;
+    margin-right: 5px;
+}
+
+/* Radio Buttons */
+
+/* Para select */
+
+#altQ {
+    min-width: 20px;
+    min-height: 20px;
+    margin-right: 5px;
+}
+
+#altF {
+    min-width: 20px;
+    min-height: 20px;
+    margin-right: 5px;
+}
+
+#altB {
+    min-width: 20px;
+    min-height: 20px;
+    margin-right: 5px;
+}
+
+/* Para alternativas */
+
+#alt1 {
+    min-width: 20px;
+    min-height: 20px;
+    margin-right: 5px;
+}
+
+#alt2 {
+    min-width: 20px;
+    min-height: 20px;
+    margin-right: 5px;
+}
+
+#alt3 {
+    min-width: 20px;
+    min-height: 20px;
+    margin-right: 5px;
+}
+
+#alt4 {
+    min-width: 20px;
+    min-height: 20px;
+    margin-right: 5px;
+}
+
+/* Para Dificuldade */
+
+#altFa {
+    min-width: 20px;
+    min-height: 20px;
+    margin-right: 5px;
+}
+
+#altMe {
+    min-width: 20px;
+    min-height: 20px;
+    margin-right: 5px;
+}
+
+#altDi {
+    min-width: 20px;
+    min-height: 20px;
+    margin-right: 5px;
+}
+
+/* Botão enviar */
+
+.botao {
+    color: rgba(27, 116, 68, 0.6);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    border-radius: 10%;
+    font-style: italic;
+    font-weight: 800;
+    width: 80px;
+}

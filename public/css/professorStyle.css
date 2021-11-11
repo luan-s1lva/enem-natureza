@@ -1,0 +1,66 @@
+body, html {
+    background-image: url("/img/backG.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    width: 90%;
+    margin-top: 20px;
+}
+
+h1 {
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    width: 80%;
+    text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.50);
+}
+
+img {
+    height: 210px;
+    width: 210px;
+}
+
+.info {
+    margin-top: 16px;
+    background-color: white;
+    border-radius: 25px 25px 25px 25px;
+    padding: 12px;
+    width: 90%;
+    overflow: hidden;
+}
+
+button {
+    height: 80px;
+    background-color: white;
+    border-radius: 22px;
+    cursor: pointer;
+    box-shadow: 0 9px #999;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 255, 0.712);
+    color: white;
+}
+
+button:focus {
+    background-color: rgba(21, 255, 0, 0.712);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+footer {
+    background-color: white;
+    padding: 18px;
+    margin-top: 35px;
+    color: rgb(64, 143, 45);
+}
+
+footer a {
+    margin-bottom: 35px;
+}

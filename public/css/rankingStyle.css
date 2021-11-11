@@ -1,0 +1,50 @@
+body {
+    background: linear-gradient(60deg, #2BCD75 100%, #44CC22 100%, #57E040 0%);
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 900;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: rgba(27, 116, 68, 0.6);
+    padding-top: 3px;
+}
+
+.fundo2 {
+    width: 272px;
+    height: 37px;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    align-items: center;
+    margin: auto;
+}
+
+p {
+    color: rgb(64, 143, 45);
+}
+
+#linha {
+    border: 1px solid #44CC22;
+}
+
+.lado {
+    float: left;
+}
+
+footer {
+    background-color: white;
+    padding: 18px;
+    margin-top: 35px;
+    color: rgb(64, 143, 45);
+}
+
+footer a {
+    margin-bottom: 35px;
+}
