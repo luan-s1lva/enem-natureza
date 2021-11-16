@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSolicitationsTable extends Migration
+class CreateThemesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateSolicitationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('solicitations', function (Blueprint $table) {
+        Schema::create('themes', function (Blueprint $table) {
             $table->id();
+            $table->string('theme');
+            $table->id('idDisciplina');
             $table->timestamps();
         });
     }
@@ -26,6 +28,7 @@ class CreateSolicitationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('solicitations');
+        Schema::dropIfExists('themes');
+       
     }
 }

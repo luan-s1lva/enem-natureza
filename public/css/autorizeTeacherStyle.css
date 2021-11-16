@@ -29,14 +29,13 @@ p {
     font-size: 13pt;
 }
 
+#campo {
+    padding: 10px;
+}
+
 .icon {
     width: 90px;
     height: 90px;
-}
-
-button {
-    background-color: transparent;
-    border: transparent;
 }
 
 button:hover {
