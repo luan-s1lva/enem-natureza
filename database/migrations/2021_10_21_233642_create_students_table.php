@@ -23,6 +23,7 @@ class CreateStudentsTable extends Migration
             $table->integer('age');
             $table->integer('serie');
             $table->string('img');
+            $table->id('idPartida');
             $table->timestamps();
         });
     }
