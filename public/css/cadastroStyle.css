@@ -14,10 +14,10 @@ body {
 
 main {
     margin-top: 30px;
-    height: 600px;
+    height: 900px;
     position: relative;
     border: 8px solid whitesmoke;
-    margin-bottom: 20px;
+
 }
 
 form {
@@ -31,7 +31,7 @@ h1 {
 }
 
 img {
-    border-radius: 10px;
+    border-radius: 30px;
 }
 
 label {
@@ -40,15 +40,20 @@ label {
     text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.50);
 }
 
+
+.botoes{
+    padding-top: 10px;
+}
 .botao {
     background-color: #1199EE;
     border-radius: 20px;
     color: white;
     width: 100px;
+    
 }
 
 .botao:hover {
-    opacity: 90%;
+    opacity: 80%;
 }
 
 .campo {
