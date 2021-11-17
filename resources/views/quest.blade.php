@@ -27,7 +27,7 @@
                 <div class="col-md">
                     <div class="container-fluid-md">
                         <label for="txt_enun">Enunciado: *</label>
-                        <textarea name="editor" id="editor" cols="30" rows="10">iktgltl</textarea>
+                        <textarea name="editor" id="editor" cols="100" rows="100"></textarea>
                     </div>
                 </div>
 
