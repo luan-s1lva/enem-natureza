@@ -14,4 +14,9 @@ class Discipline extends Model
     protected $hidden = [
         'idDisciplina'
     ];
+
+    public function temas(){
+
+        return $this->hasMany(Theme::class);
+    }
 }

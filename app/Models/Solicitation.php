@@ -19,4 +19,14 @@ class Solicitation extends Model
         'email',
         'senha',
     ];
+
+    public function teachers(){
+
+        return $this->hasMany(Teacher::class);
+    }
+
+    public function admins(){
+
+        return $this->belongsTo(Admin::class);
+    } 
 }

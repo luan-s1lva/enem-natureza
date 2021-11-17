@@ -11,4 +11,9 @@ class Matche extends Model
     protected $fillable = [
       'horario',  
     ];
+
+    public function students(){
+
+      return $this->hasOne(Student::class);
+    }
 }

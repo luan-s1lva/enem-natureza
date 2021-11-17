@@ -17,4 +17,20 @@ class Quest extends Model
         'idQuest', 
         'idTeacher'
     ];
+
+    public function theme()
+    {
+        return $this->belongsTo(Theme::class);
+    }
+
+    public function teachers(){
+
+        return $this->belongsTo(Teacher::class);
+    } 
+
+    public function alternatives(){
+
+        return $this->hasMany(Alternative::class);
+    }
+
 }

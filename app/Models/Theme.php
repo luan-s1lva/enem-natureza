@@ -15,4 +15,14 @@ class Theme extends Model
     protected $hidden = [
         'idTema'
     ];
+
+    public function discipline(){
+        
+        return $this->belongsTo(Discipline::class);
+    }
+
+    public function perguntas(){
+
+        return $this->hasMany(Quest::class);
+    }
 }

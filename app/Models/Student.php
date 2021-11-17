@@ -22,4 +22,9 @@ class Student extends Model
         'senha',
         'idAluno',
     ];
+
+    public function matches(){
+
+        return $this->belongsTo(Matche::class);
+    }
 }

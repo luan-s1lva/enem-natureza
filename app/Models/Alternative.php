@@ -16,4 +16,14 @@ class Alternative extends Model
         'idAlterna',
         'idQuest',
     ];
+
+    public function answers(){
+
+        return $this->belongsTo(Answer::class);
+    }
+
+    public function quests(){
+
+        return $this->belongsTo(Quest::class);
+    }
 }

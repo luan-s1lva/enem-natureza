@@ -16,4 +16,9 @@ class Answer extends Model
         'idAnswer',
         'idAlterna',
     ];
+
+    public function alternatives(){
+
+        return $this->hasMany(Alternative::class);
+    }
 }

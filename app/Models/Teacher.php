@@ -20,4 +20,14 @@ class Teacher extends Model
         'senha',
         'isValidado'
     ];
+
+    public function solicitations(){
+
+        return $this->belongsTo(Solicitation::class, 'foreign_key');
+    }
+
+    public function quests(){
+
+        return $this->hasMany(Quest::class);
+    }
 }
