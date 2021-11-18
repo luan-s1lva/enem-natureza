@@ -15,9 +15,9 @@ class CreateAlternativesTable extends Migration
     {
         Schema::create('alternatives', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('quest_id')->constrained();
+            $table->boolean('isTrue')->default(false);
             $table->string('texto');
-            $table->int('idAlterna');
-            $table->int('idQuest');
             $table->timestamps();
         });
     }

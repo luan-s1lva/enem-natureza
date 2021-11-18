@@ -12,8 +12,13 @@ class Matche extends Model
       'horario',  
     ];
 
-    public function students(){
+    public function student(){
 
-      return $this->hasOne(Student::class);
+      return $this->belongsTo(Student::class);
+    }
+
+    public function quests(){
+
+      return $this->belongsToMany(Quest::class);
     }
 }

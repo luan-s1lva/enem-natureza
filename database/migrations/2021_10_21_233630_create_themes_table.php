@@ -15,8 +15,8 @@ class CreateThemesTable extends Migration
     {
         Schema::create('themes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('discipline_id')->constrained();
             $table->string('theme');
-            $table->id('idDisciplina');
             $table->timestamps();
         });
     }

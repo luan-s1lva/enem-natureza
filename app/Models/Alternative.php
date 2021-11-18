@@ -15,12 +15,8 @@ class Alternative extends Model
     protected $hidden = [
         'idAlterna',
         'idQuest',
+        'isTrue',
     ];
-
-    public function answers(){
-
-        return $this->belongsTo(Answer::class);
-    }
 
     public function quests(){
 

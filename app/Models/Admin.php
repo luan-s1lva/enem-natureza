@@ -17,9 +17,4 @@ class admin extends Model
         'email',
         'senha',
     ];
-
-    public function solicitations(){
-
-        return $this->hasMany(Solicitaion::class);
-    }
 }

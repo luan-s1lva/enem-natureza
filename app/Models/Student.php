@@ -25,6 +25,6 @@ class Student extends Model
 
     public function matches(){
 
-        return $this->belongsTo(Matche::class);
+        return $this->hasMany(Matche::class);
     }
 }

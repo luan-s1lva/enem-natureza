@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSolicitationsTable extends Migration
+class CreateMatcheQuestTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateSolicitationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('solicitations', function (Blueprint $table) {
+        Schema::create('matche_quest', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('lattes');
+            $table->foreignId('matche_id')->constrained();
+            $table->foreignId('quest_id')->constrained();
+            $table->boolean('acertou');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateSolicitationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('solicitations');
+        Schema::dropIfExists('matches_quests');
     }
 }

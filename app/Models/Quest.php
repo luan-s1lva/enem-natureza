@@ -23,7 +23,7 @@ class Quest extends Model
         return $this->belongsTo(Theme::class);
     }
 
-    public function teachers(){
+    public function teacher(){
 
         return $this->belongsTo(Teacher::class);
     } 
@@ -31,6 +31,11 @@ class Quest extends Model
     public function alternatives(){
 
         return $this->hasMany(Alternative::class);
+    }
+
+    public function matche(){
+
+        return $this->belongsToMany(Matche::class);
     }
 
 }

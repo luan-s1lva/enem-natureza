@@ -15,6 +15,7 @@ class CreateMatchesTable extends Migration
     {
         Schema::create('matches', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('student_id')->constrained();
             $table->dateTime('horario');
             $table->timestamps();
         });

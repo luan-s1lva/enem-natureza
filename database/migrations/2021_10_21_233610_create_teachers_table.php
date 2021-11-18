@@ -20,7 +20,7 @@ class CreateTeacherTable extends Migration
             $table->string('name');
             $table->string('org');
             $table->string('img');
-            $table->integer('isValidado');
+            $table->integer('isValidado')->default(0);
             $table->timestamps();
         });
     }
