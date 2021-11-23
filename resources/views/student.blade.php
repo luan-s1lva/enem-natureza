@@ -13,9 +13,7 @@
 <br>
 <main class="container">
     <div class="row-cols-1">
-        <div class="botoes">
-            <button class="col"><img class="icons" src="/img/ranking.png" alt="Icone feito por https://www.freepik.com no Flaticon">  Vizualizar Ranking</button>
-        </div>
+        
         <div class="botoes">
 
             <button class="col"><img class="icons" src="/img/cerebro.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Campanha</button>
@@ -23,6 +21,12 @@
         <div class="botoes">
             <button class="col"><img class="icons" src="/img/livros.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Dividido
                 por Assuntos</button>
+        </div>
+        <div class="botoes">
+            <button class="col"><img class="icons" src="/img/ranking.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Vizualizar Ranking</button>
+        </div>
+        <div class="botoes">
+            <button class="col"><img class="icons" src="/img/historico.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Histórico de Partidas</button>
         </div>
     </div>
 </main>

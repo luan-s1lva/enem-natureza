@@ -1,0 +1,42 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('/img/backG.png');
+    background-size: 100%;
+    width: 100%;
+    height: 600px;
+}
+
+header {
+    background-color: white;
+    border-radius: 50px;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+h1 {
+    font-size: 30pt;
+    font-weight: bolder;
+    text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.50);
+}
+h2{
+    font-size: 18pt;
+   
+}
+
+footer {
+    background-color: white;
+    padding: 18px;
+    margin-top: 35px;
+    color: rgb(64, 143, 45);
+}
+
+footer a {
+    margin-bottom: 35px;
+}
+
+#partida {
+    padding-top: 20px;
+}
+.bold{
+    font-weight: bold;
+}

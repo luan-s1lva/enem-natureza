@@ -52,3 +52,7 @@ Route::get('/admin', function () {
 Route::get('/solicitations', function(){
     return view('autorizeTeacher');
 });
+
+Route::get('/partidas', function () {
+    return view('matches');
+});
