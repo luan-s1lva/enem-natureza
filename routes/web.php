@@ -25,24 +25,24 @@ use App\Http\Controllers\SolicitacionsController;
 use App\Http\Controllers\PlayController;
 use App\Http\Controllers\CreateQuizController;
 
-Route::get('/',[LoginController::class, 'index']);
+Route::get('/', [LoginController::class, 'index']);
 
-Route::get('/cadastro',[CadastroController::class, 'index']);
+Route::get('/cadastro', [CadastroController::class, 'index']);
 
-Route::get('estudante/play',[PlayController::class, 'index']);
+Route::get('/professor', [TeacherController::class, 'index']);
 
-Route::get('/professor',[TeacherController::class, 'index']);
-
-Route::get('/professor/criarPergunta',[QuestController::class, 'index']);
+Route::get('/professor/criarPergunta', [QuestController::class, 'index']);
 
 Route::get('/estudante', [StudentController::class, 'index']);
 
-Route::get('estudante/ranking',[RankingController::class, 'index']);
+Route::get('estudante/ranking', [RankingController::class, 'index']);
 
-Route::get('estudante/criarQuiz',[CreateQuizController::class, 'index']);
+Route::get('estudante/criarQuiz', [CreateQuizController::class, 'index']);
 
-Route::get('/admin',[AdminController::class, 'index']); 
+Route::get('estudante/play', [PlayController::class, 'index']);
 
-Route::get('admin/solicitacoes',[SoliciacionsController::class, 'index']);
+Route::get('estudante/historico', [MatcheController::class, 'index']);
 
-Route::get('/historico',[MatcheController::class, 'index']);
+Route::get('/admin', [AdminController::class, 'index']);
+
+Route::get('admin/solicitacoes', [SoliciacionsController::class, 'index']);
