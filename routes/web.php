@@ -13,46 +13,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-});
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\QuestController;
+use App\Http\Controllers\MatcheController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CadastroController;
+use App\Http\Controllers\RankingController;
+use App\Http\Controllers\SolicitacionsController;
+use App\Http\Controllers\PlayController;
+use App\Http\Controllers\CreateQuizController;
 
-Route::get('/cadastro', function () {
-    return view('cadastro');
-});
+Route::get('/',[LoginController::class, 'index']);
 
-Route::get('/playing', function () {
-    return view('playQ');
-});
+Route::get('/cadastro',[CadastroController::class, 'index']);
 
-Route::get('/teacher', function () {
-    return view('teacher');
-});
+Route::get('estudante/play',[PlayController::class, 'index']);
 
-Route::get('/creatingQuest', function () {
-    return view('quest');
-});
+Route::get('/professor',[TeacherController::class, 'index']);
 
-Route::get('/student', function () {
-    return view('student');
-});
+Route::get('/professor/criarPergunta',[QuestController::class, 'index']);
 
-Route::get('/ranking', function () {
-    return view('ranking');
-});
+Route::get('/estudante', [StudentController::class, 'index']);
 
-Route::get('/creatingQuiz', function () {
-    return view('creatingQuiz');
-});
+Route::get('estudante/ranking',[RankingController::class, 'index']);
 
-Route::get('/admin', function () {
-    return view('admin');
-});
+Route::get('estudante/criarQuiz',[CreateQuizController::class, 'index']);
 
-Route::get('/solicitations', function(){
-    return view('autorizeTeacher');
-});
+Route::get('/admin',[AdminController::class, 'index']); 
 
-Route::get('/partidas', function () {
-    return view('matches');
-});
+Route::get('admin/solicitacoes',[SoliciacionsController::class, 'index']);
+
+Route::get('/historico',[MatcheController::class, 'index']);
