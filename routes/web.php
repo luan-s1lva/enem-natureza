@@ -28,6 +28,7 @@ use App\Http\Controllers\CreateQuizController;
 Route::get('/', [LoginController::class, 'index']);
 
 Route::get('/cadastro', [CadastroController::class, 'index']);
+Route::post('/',[StudentController::class, 'store']);
 
 Route::get('/professor', [TeacherController::class, 'index']);
 

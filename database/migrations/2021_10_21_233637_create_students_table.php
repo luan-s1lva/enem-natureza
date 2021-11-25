@@ -19,11 +19,11 @@ class CreateStudentsTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('name');
-            $table->integer('xp');
+            $table->integer('xp')->default(0);
             $table->string('org');
             $table->integer('age');
             $table->integer('serie');
-            $table->string('img');
+            $table->string('img')->default("");
             $table->timestamps();
         });
     }
