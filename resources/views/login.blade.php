@@ -13,7 +13,13 @@
 <body class="container">
 
     <main class="container">
-
+        <div class="container-fluid">
+            <div class="row">
+                @if(session('msg'))
+                    <p class="msg">{{session('msg')}}</p> 
+                @endif    
+            </div>
+        </div>
         <div class="row row-cols-1 row-cols-sm-1 row-cols-xl-2 row-cols-lg-2 row-cols-md-2 container" id="centro">
             <div class="col">
                 <img src="/img/logoNatureza.jpeg" class="img-fluid" alt="Logo do ENEM NATUREZA">
@@ -44,7 +50,7 @@
                         <br>
 
                         <button class="botao" type="submit">Logar</button>
-                        <button class="botao">Cadastrar</button>
+                        <button class="botao"><a href="/cadastro">Cadastre-se</a></button>
 
                     </div>
                 </form>

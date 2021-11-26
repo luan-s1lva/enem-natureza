@@ -41,19 +41,31 @@ label {
 }
 
 
-.botoes{
-    padding-top: 10px;
+a {
+    color: white;
+    text-decoration: none;
 }
+
+a:hover {
+    color: white;
+    text-decoration: none;
+
+}
+
 .botao {
     background-color: #1199EE;
     border-radius: 20px;
     color: white;
     width: 100px;
-    
+    font-weight: 700;
 }
 
 .botao:hover {
-    opacity: 80%;
+    background-color: #2288aa;
+}
+
+.botoes {
+    padding-top: 10px;
 }
 
 .campo {

@@ -17,9 +17,11 @@ class CreateTeachersTable extends Migration
             $table->id();
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('name');
+            $table->text('name');
             $table->string('org');
-            $table->string('img');
+            $table->integer('idade');
+            $table->string('img')->default(" ");
+            $table->string('lattes');
             $table->integer('isValidado')->default(0);
             $table->timestamps();
         });

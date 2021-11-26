@@ -18,7 +18,7 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('name');
+            $table->text('name');
             $table->integer('xp')->default(0);
             $table->string('org');
             $table->integer('age');

@@ -5,7 +5,7 @@
 <header class="container text-center">
     <h1>Histórico de Partidas:</h1>
 </header>
-<main class="container-fluid row row-cols-2">
+<main class="container-fluid row row-col  row-cols-md-2">
 
     <div id="partida" class="col">
         <div class="card text-center">

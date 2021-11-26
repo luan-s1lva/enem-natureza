@@ -11,7 +11,9 @@ class Teacher extends Model
     protected $fillable=[
         'nome',
         'org',
-        'img' 
+        'img',
+        'idade',
+        'lattes' 
     ];
 
     protected $hidden=[

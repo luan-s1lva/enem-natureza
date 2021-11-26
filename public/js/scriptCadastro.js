@@ -1,8 +1,10 @@
-function trocar() {
     var $radio1 = document.getElementById("isProfessor");
     var $div1 = document.getElementById("m1");
     var $radio2 = document.getElementById("isEstudante");
     var $div2 = document.getElementById("m2");
+
+function trocar() {
+    
     if($radio1.checked){
         $div1.removeAttribute("hidden"); 
     }else{
@@ -13,4 +15,13 @@ function trocar() {
     }else{
         $div2.setAttribute("hidden", "hidden");
     }
+}
+
+function sinal(){
+
+    if($radio1.hasAttributes == "hidden"){
+        return 1;
+    }else{
+        return 0;
+    } 
 }

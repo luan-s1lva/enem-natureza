@@ -56,15 +56,20 @@
 
                         <div class="container" onchange="trocar();">
 
-                        <input type="radio" name="serie" id="isProfessor" value="1">
+                        <input type="radio" name="radClasse"  id="isProfessor" value="1">
                         <label class="radio" for="isProfessor">Sou Professor</label>
                         <div class="container" id="m1" hidden>
                             <label for="txt_lattes">Lattes:</label>
                             <br>
                             <input type="text" class="campo container" id="txt_lattes" name="lattes" placeholder="Informe seu lattes">
+
+                            <label for="numb_idade">Idade:</label>
+                            <br>
+                            <input type="number" class="campo container" id="numb_idade" name="age" placeholder="Informe sua idade">
+
                         </div>
                         <br>
-                        <input type="radio" name="serie" id="isEstudante" value="2">
+                        <input type="radio" name="radClasse" id="isEstudante" value="2">
                         <label class="radio" for="isEstudante">Sou Estudante</label>
 
                         <div class="container" id="m2" hidden>
@@ -72,17 +77,20 @@
                             <br>
                             <input type="number" class="campo container" id="numb_idade" name="age" placeholder="Informe sua idade">
 
-                            <label for="txt_serie">Série:</label>
+                            <label for="sel_serie">Série:</label>
                             <br>
-                            <input type="number" class="campo container" id="txt_serie" name="serie" placeholder="Informe sua série">
-
-
+                            <select name="serie" id="sel_serie" class="campo container">
+                                <option value="">Selecione...</option>
+                                <option value="1">1° ano</option>
+                                <option value="2">2° ano</option>
+                                <option value="3">3° ano</option>
+                            </select>
                         </div>
                     </div>
 
 
                     <div class="botoes text-center">
-                        <input class="botao" type="submit" value="Voltar">
+                        <button class="botao"><a href="/">Voltar</a></button>
 
                         <input class="botao" type="submit" value="Cadastrar">
                     </div>

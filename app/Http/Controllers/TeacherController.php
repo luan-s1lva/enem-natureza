@@ -12,15 +12,17 @@ class TeacherController extends Controller
     }
 
     public function store(Request $request){
-        $teachers = new teacher;
+        $professor = new Teacher;
 
-        $teachers->name = $request->name;
-        $teachers->email = $request->email; 
-        $teachers->org = $request->org;
-        $teachers->password = $request->password;
-        $teachers->lattes = $request->lattes;
+        $professor->name = $request->name;
+        $professor->email = $request->email; 
+        $professor->org = $request->org;
+        $professor->idade = $request->idade;
+        $professor->lattes = $request->lattes;
+        $professor->password = $request->password;
+        $professor->lattes = $request->lattes;
 
-        $teachers->save();
+        $professor->save();
         
         return redirect('/');
     }

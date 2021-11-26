@@ -23,6 +23,12 @@ class StudentController extends Controller
 
         $estudantes->save();
         
-        return redirect('/');
+        return redirect('/')->with('msg','Aluno cadastrado com sucesso');
+    }
+    public function show($id)
+    {
+        $aluno = Student::findOrFail($id);
+
+        return view('student', ['aluno' => $aluno]);
     }
 }

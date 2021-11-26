@@ -28,21 +28,25 @@ use App\Http\Controllers\CreateQuizController;
 Route::get('/', [LoginController::class, 'index']);
 
 Route::get('/cadastro', [CadastroController::class, 'index']);
-Route::post('/',[StudentController::class, 'store']);
+
+Route::post('/',[StudentController::class, 'store']); 
+
+//Route::post('/',[TeacherController::class, 'store']);
 
 Route::get('/professor', [TeacherController::class, 'index']);
 
 Route::get('/professor/criarPergunta', [QuestController::class, 'index']);
 
 Route::get('/estudante', [StudentController::class, 'index']);
+Route::get('/estudante/{id}', [StudentController::class, 'show']);
 
-Route::get('estudante/ranking', [RankingController::class, 'index']);
+Route::get('/estudante/{id}/ranking', [RankingController::class, 'index']);
 
-Route::get('estudante/criarQuiz', [CreateQuizController::class, 'index']);
+Route::get('/estudante/{id}/criarQuiz', [CreateQuizController::class, 'index']);
 
-Route::get('estudante/play', [PlayController::class, 'index']);
+Route::get('/estudante/{id}/play', [PlayController::class, 'index']);
 
-Route::get('estudante/historico', [MatcheController::class, 'index']);
+Route::get('/estudante/{id}/historico', [MatcheController::class, 'index']);
 
 Route::get('/admin', [AdminController::class, 'index']);
 
