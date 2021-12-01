@@ -14,7 +14,7 @@
 
     <main class="container">
         <div class="container-fluid">
-            <div class="row">
+            <div class="msg row text-center text-danger">
                 @if(session('msg'))
                     <p class="msg">{{session('msg')}}</p> 
                 @endif    
@@ -31,19 +31,20 @@
                     LOGIN:
                 </h1>
 
-                <form action="" method="POST" class="container">
+                <form action="/login/check" method="POST" class="container">
+                @csrf
                     <div>
                         <br>
                         <label for="txt_email">E-mail: </label>
                         <br>
-                        <input type="email" class="campo container" id="txt_email" name="e-mail" placeholder="Ex.: aluno@gmail.com">
+                        <input type="email" class="campo container" id="txt_email" name="email" placeholder="Ex.: aluno@gmail.com">
                     </div>
 
                     <div>
                         <br>
                         <label for="txt_password">Senha:</label>
                         <br>
-                        <input type="password" class="campo container" id="txt_password" name="senha" placeholder="Ex:user123">
+                        <input type="password" class="campo container" id="txt_password" name="password" placeholder="Ex:user123">
                     </div>
 
                     <div class="text-center">

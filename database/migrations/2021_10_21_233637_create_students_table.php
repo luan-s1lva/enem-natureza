@@ -21,7 +21,7 @@ class CreateStudentsTable extends Migration
             $table->text('name');
             $table->integer('xp')->default(0);
             $table->string('org');
-            $table->integer('age');
+            $table->datetime('dataNas');
             $table->integer('serie');
             $table->string('img')->default("");
             $table->timestamps();

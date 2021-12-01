@@ -26,7 +26,7 @@
                     CADASTRO:
                 </h1>
 
-                <form action="/" method="POST" class="container">
+                <form action="/student/store" id="cadastro" method="POST" class="container">
                     @csrf
                     <div>
                         <br>
@@ -54,6 +54,13 @@
                         <input type="password" class="campo container" id="txt_password" name="password" placeholder="Digite sua senha">
                     </div>
 
+                    <div>
+                        <br>
+                        <label for="date_Nasci">Data de nascimento:</label>
+                        <br>
+                        <input type="date" class="campo container" id="date_Nasci" name="dataNas">
+                    </div>
+
                         <div class="container" onchange="trocar();">
 
                         <input type="radio" name="radClasse"  id="isProfessor" value="1">
@@ -62,21 +69,12 @@
                             <label for="txt_lattes">Lattes:</label>
                             <br>
                             <input type="text" class="campo container" id="txt_lattes" name="lattes" placeholder="Informe seu lattes">
-
-                            <label for="numb_idade">Idade:</label>
-                            <br>
-                            <input type="number" class="campo container" id="numb_idade" name="age" placeholder="Informe sua idade">
-
                         </div>
                         <br>
                         <input type="radio" name="radClasse" id="isEstudante" value="2">
                         <label class="radio" for="isEstudante">Sou Estudante</label>
 
                         <div class="container" id="m2" hidden>
-                            <label for="numb_idade">Idade:</label>
-                            <br>
-                            <input type="number" class="campo container" id="numb_idade" name="age" placeholder="Informe sua idade">
-
                             <label for="sel_serie">Série:</label>
                             <br>
                             <select name="serie" id="sel_serie" class="campo container">

@@ -1,6 +1,7 @@
 @extends('layouts.telaQuest')
 @section('css', '/css/questStyle.css')
 
+
 @section('content')
 <header>
     <h1 class="fundo container-fluid-md col-md">Crie sua pergunta</h1>
@@ -204,12 +205,9 @@
             </fieldset>
         </form>
     </div>
-</main>  
-<script src="/js/editor.js"></script>
-<script>
-    var editor = new CDEditor('#editor');
-</script>
-<script src="/js/scriptQuest.js"></script>
+</main>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<script src="/js/editor.js"></script>
+<script src="/js/scriptQuest.js"></script>
 @endsection

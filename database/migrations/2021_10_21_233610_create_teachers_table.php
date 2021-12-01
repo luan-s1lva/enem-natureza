@@ -19,7 +19,7 @@ class CreateTeachersTable extends Migration
             $table->string('password');
             $table->text('name');
             $table->string('org');
-            $table->integer('idade');
+            $table->datetime('dataNas');
             $table->string('img')->default(" ");
             $table->string('lattes');
             $table->integer('isValidado')->default(0);

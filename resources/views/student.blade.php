@@ -3,12 +3,12 @@
 @section('content')
 <header class="container text-center text-light">
     <div class="userFace"></div>
-    <h1>{{$aluno->name}}</h1>
+    <h1>teste</h1>
     <hr>
-    <h2>{{$aluno->org}}</h2>
+    <h2>teste</h2>
     <hr>
     <h3>Seu Nível: 1</h3>
-    <div style="line-height:50px" class="level text-dark">{{$aluno->xp}}/100</div>
+    <div style="line-height:50px" class="level text-dark">teste/100</div>
 </header>
 <br>
 <main class="container">

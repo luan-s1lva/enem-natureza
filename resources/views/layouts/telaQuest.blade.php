@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="@yield('css')">
 </head>
 
-<body>
+<body onload="myFunction()">
     @yield('content')
     <footer class="container-fluid text-center">
         <p>Todos os direitos reservados <span class="copyleft font-weight-bold">&copy; ENEM NATUREZA </span> </p>
@@ -21,9 +21,12 @@
             <p class="font-weight-bold" style="margin-bottom:0;">Contato</p>
             <a href="mailto:enem.naturezaadm@gmail.com">enem.naturezaadm@gmail.com</a>
         </div>
-
-        </div>
     </footer>
+    <script>
+        function myFunction(){
+            var editor = new CDEditor('#editor');
+        }
+    </script>
 </body>
 
 </html>

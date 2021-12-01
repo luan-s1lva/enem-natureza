@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use Illuminate\Support\Facades\Hash;
 
 class StudentController extends Controller
 {
@@ -15,16 +16,17 @@ class StudentController extends Controller
         $estudantes = new Student;
         
         $estudantes->email = $request->email;
-        $estudantes->password = $request->password;
+        $estudantes->password = Hash::make($request->password); 
         $estudantes->org = $request->org;
         $estudantes->name = $request->name;
-        $estudantes->age = $request->age;
+        $estudantes->dataNas = $request->dataNas;
         $estudantes->serie = $request->serie;
 
         $estudantes->save();
         
-        return redirect('/')->with('msg','Aluno cadastrado com sucesso');
+        return redirect('/')->with('msg','Aluno cadastrado com sucesso!');
     }
+    
     public function show($id)
     {
         $aluno = Student::findOrFail($id);

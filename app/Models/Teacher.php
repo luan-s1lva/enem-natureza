@@ -12,7 +12,7 @@ class Teacher extends Model
         'nome',
         'org',
         'img',
-        'idade',
+        'dataNas',
         'lattes' 
     ];
 

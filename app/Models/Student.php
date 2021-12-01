@@ -13,7 +13,7 @@ class Student extends Model
         'org',
         'xp',
         'serie',
-        'idade',
+        'dataNas',
         'img',
     ];
 

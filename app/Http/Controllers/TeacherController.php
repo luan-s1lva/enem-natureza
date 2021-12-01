@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Teacher;
+use Illuminate\Support\Facades\Hash;
+
 
 class TeacherController extends Controller
 {
@@ -17,9 +20,9 @@ class TeacherController extends Controller
         $professor->name = $request->name;
         $professor->email = $request->email; 
         $professor->org = $request->org;
-        $professor->idade = $request->idade;
+        $professor->dataNas = $request->dataNas;
         $professor->lattes = $request->lattes;
-        $professor->password = $request->password;
+        $professor->password = Hash::make($request->password);
         $professor->lattes = $request->lattes;
 
         $professor->save();

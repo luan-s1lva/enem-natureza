@@ -27,18 +27,21 @@ use App\Http\Controllers\CreateQuizController;
 
 Route::get('/', [LoginController::class, 'index']);
 
+Route::post('/login/check',[LoginController::class, 'checkStudent']);
+Route::post('/login/checkProfessor',[LoginController::class, 'checkTeacher']);
+
 Route::get('/cadastro', [CadastroController::class, 'index']);
 
-Route::post('/',[StudentController::class, 'store']); 
+Route::post('/student/store',[StudentController::class, 'store']); 
 
-//Route::post('/',[TeacherController::class, 'store']);
+Route::post('/teacher/store',[TeacherController::class, 'store']);
 
-Route::get('/professor', [TeacherController::class, 'index']);
+Route::get('/professor', [TeacherController::class, 'index'])->middleware('auth');
 
-Route::get('/professor/criarPergunta', [QuestController::class, 'index']);
+Route::get('/professor/criarPergunta', [QuestController::class, 'index'])->middleware('token.validation');
 
-Route::get('/estudante', [StudentController::class, 'index']);
-Route::get('/estudante/{id}', [StudentController::class, 'show']);
+Route::get('/estudante', [StudentController::class, 'index']);/*->middleware('auth')*/
+Route::get('/estudante/{id}', [StudentController::class, 'show'])/*->middleware('token-validation')*/;
 
 Route::get('/estudante/{id}/ranking', [RankingController::class, 'index']);
 
@@ -46,8 +49,8 @@ Route::get('/estudante/{id}/criarQuiz', [CreateQuizController::class, 'index']);
 
 Route::get('/estudante/{id}/play', [PlayController::class, 'index']);
 
-Route::get('/estudante/{id}/historico', [MatcheController::class, 'index']);
+Route::get('/estudante/{id}/historico', [MatcheController::class, 'index'])->middleware('token-validation');
 
-Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin', [AdminController::class, 'index'])->middleware('auth');
 
-Route::get('admin/solicitacoes', [SoliciacionsController::class, 'index']);
+Route::get('admin/solicitacoes', [SoliciacionsController::class, 'index'])->middleware('token-validation');
