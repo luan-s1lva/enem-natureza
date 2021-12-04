@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/editor.css">
     <link rel="stylesheet" href="@yield('css')">
+    <script src="//cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
 </head>
 
-<body onload="myFunction()">
+<body>
     @yield('content')
     <footer class="container-fluid text-center">
         <p>Todos os direitos reservados <span class="copyleft font-weight-bold">&copy; ENEM NATUREZA </span> </p>
@@ -22,11 +23,10 @@
             <a href="mailto:enem.naturezaadm@gmail.com">enem.naturezaadm@gmail.com</a>
         </div>
     </footer>
-    <script>
-        function myFunction(){
-            var editor = new CDEditor('#editor');
-        }
-    </script>
+
 </body>
+<script>
+    CKEDITOR.replace('editor');
+</script>
 
 </html>
