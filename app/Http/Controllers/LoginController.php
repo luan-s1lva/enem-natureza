@@ -17,12 +17,13 @@ class LoginController extends Controller
             return view('login');
         } else {
             if (session()->get('tipo') == 'estudante') {
-                return view('student');
+                $view = 'student';
             } else if (session()->get('tipo') == 'professor') {
-                return view('teacher');
+                $view = 'teacher';
             } else {
-                return view('admin');
+                $view = 'admin';
             }
+            return view($view, ['usuario' => session()->get('usuario')]);
         }
     }
 
