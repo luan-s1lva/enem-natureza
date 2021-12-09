@@ -42,7 +42,7 @@ class LoginController extends Controller
                 }
             }
         }
-        //return redirect('/')->with('msg','Email ou Senha Incorretos!');
+        
         
         foreach($teachersEmail as $emailProfessor)
         {
@@ -54,7 +54,9 @@ class LoginController extends Controller
                 }
             }
         }
+        return redirect('/')->with('msg','Email ou Senha Incorretos!');
     }
+    
     /*
     public function checkTeacherPassword(Teacher $professor){
         

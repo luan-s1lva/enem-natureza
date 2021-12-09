@@ -26,7 +26,7 @@
     </div>
 
     <div class="text-center row row-cols-2" style="width:85%; margin:auto; margin-top:40px;">
-        <button class="col container" tabindex="1">CADASTRAR PERGUNTA</button>
+        <button class="col container" tabindex="1"><a href="/professor/criarPergunta">CADASTRAR PERGUNTA</a></button>
         <button class="col container" tabindex="2">EDITAR PERGUNTA</button>
     </div>
 

@@ -51,7 +51,7 @@
                         <br>
 
                         <button class="botao" type="submit">Logar</button>
-                        <button class="botao"><a href="/cadastro">Cadastre-se</a></button>
+                        <button class="botao"><a href="/cadastro">Cadastrar</a></button>
 
                     </div>
                 </form>
