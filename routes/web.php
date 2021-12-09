@@ -47,19 +47,19 @@ Route::middleware('autenticacao:estudante')->group(function() {
 
     Route::get('/estudante/{id}', [StudentController::class, 'show'])/*->middleware('token-validation')*/;
 
-    Route::get('/estudante/{id}/ranking', [RankingController::class, 'index']);
+    Route::get('/ranking', [RankingController::class, 'index']);
     
-    Route::get('/estudante/{id}/criarQuiz', [CreateQuizController::class, 'index']);
+    Route::get('/criarQuiz', [CreateQuizController::class, 'index']);
     
-    Route::get('/estudante/{id}/play', [PlayController::class, 'index']);
+    Route::get('/play', [PlayController::class, 'index']);
     
-    Route::get('/estudante/{id}/historico', [MatcheController::class, 'index'])/*->middleware('token-validation')*/;
+    Route::get('/historico', [MatcheController::class, 'index'])/*->middleware('token-validation')*/;
 
 });
 
 Route::middleware('autenticacao:admin')->group(function() {
 
-    Route::get('/admin/solicitacoes', [SoliciacionsController::class, 'index']);
+    Route::get('/solicitacoes', [SoliciacionsController::class, 'index']);
 
 });
 

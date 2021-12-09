@@ -19,16 +19,16 @@
             <button class="col"><img class="icons" src="/img/cerebro.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Campanha</button>
         </div>
         <div class="botoes">
-            <a href="criarQuiz"><button class="col"><img class="icons" src="/img/livros.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Dividido por Assuntos</button></a>
+            <a href="/criarQuiz"><button class="col"><img class="icons" src="/img/livros.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Dividido por Assuntos</button></a>
         </div>
         <div class="botoes">
-            <a href="ranking"> <button class="col"><img class="icons" src="/img/ranking.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Vizualizar Ranking</button></a>
+            <a href="/ranking"> <button class="col"><img class="icons" src="/img/ranking.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Vizualizar Ranking</button></a>
         </div>
         <div class="botoes">
-            <a href="historico"> <button class="col"><img class="icons" src="/img/historico.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Histórico de Partidas</button></a>
+            <a href="/historico"> <button class="col"><img class="icons" src="/img/historico.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Histórico de Partidas</button></a>
         </div>
         <div class="botoes">
-            <a href="/logout"> <button class="col"><img class="icons" src="/img/historico.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Logout</button></a>
+            <a href="/logout"> <button class="col"><img class="icons" src="/img/logout.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Logout</button></a>
         </div>
     </div>
 

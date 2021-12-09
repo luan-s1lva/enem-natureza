@@ -1,10 +1,15 @@
 body {
-    background: linear-gradient(60deg, #2BCD75 100%, #44CC22 100%, #57E040 0%);
+    background-image: url("/img/rank-bg.png");
+    background-size: 100%;
+    background-repeat: repeat;
     height: 100%;
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
 }
 
+header{
+    margin-top: 20px;
+}
 h1 {
     font-size: 24px;
     font-style: italic;

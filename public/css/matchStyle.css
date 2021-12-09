@@ -3,7 +3,6 @@ body {
     background-image: url('/img/backG.png');
     background-size: 100%;
     width: 100%;
-    height: 600px;
 }
 
 header {
@@ -18,16 +17,17 @@ h1 {
     font-weight: bolder;
     text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.50);
 }
-h2{
+
+h2 {
     font-size: 18pt;
-   
+
 }
 
 footer {
     background-color: white;
-    padding: 18px;
-    margin-top: 35px;
     color: rgb(64, 143, 45);
+    margin-top: 100px;
+    padding: 30px;
 }
 
 footer a {
@@ -37,6 +37,11 @@ footer a {
 #partida {
     padding-top: 20px;
 }
-.bold{
+
+.bold {
     font-weight: bold;
+}
+
+#cardCorpo h2 {
+   padding-top: 10px;
 }

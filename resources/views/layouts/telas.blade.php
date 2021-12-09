@@ -12,14 +12,11 @@
 
 <body>
     @yield('content')
-    <footer class="container-fluid text-center">
-        <p>Todos os direitos reservados <span class="copyleft font-weight-bold">&copy; ENEM NATUREZA </span> </p>
-
-        <div style="margin-bottom:30px;">
+    <footer class="text-center">
+        <div class="container">
+            <p>Todos os direitos reservados <span class="copyleft font-weight-bold">&copy; ENEM NATUREZA </span> </p>
             <p class="font-weight-bold" style="margin-bottom:0;">Contato</p>
             <a href="mailto:enem.naturezaadm@gmail.com">enem.naturezaadm@gmail.com</a>
-        </div>
-
         </div>
     </footer>
 </body>
