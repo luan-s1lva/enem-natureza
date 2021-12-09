@@ -24,12 +24,12 @@ use App\Http\Controllers\RankingController;
 use App\Http\Controllers\SolicitacionsController;
 use App\Http\Controllers\PlayController;
 use App\Http\Controllers\CreateQuizController;
-use App\Http\Controllers\SessionController;
 
 Route::get('/', [LoginController::class, 'index']);
 
-Route::post('/login/check',[[LoginController::class, 'check'],[SessionController::class, 'session']])/*->middleware('token.validation')*/;
-//Route::post('/login/checkProfessor',[LoginController::class, 'checkTeacher']);
+Route::post('/login/check',[LoginController::class, 'check']);
+
+Route::get('/logout',[LoginController::class, 'logout']);
 
 Route::get('/cadastro', [CadastroController::class, 'index']);
 
@@ -37,23 +37,29 @@ Route::post('/student/store',[StudentController::class, 'store']);
 
 Route::post('/teacher/store',[TeacherController::class, 'store']);
 
-Route::get('/professor', [TeacherController::class, 'index'])/*->middleware('token.validation')*/;
+Route::middleware('autenticacao:professor')->group(function() {
 
-Route::get('/professor/criarPergunta', [QuestController::class, 'index'])/*->middleware('token.validation')*/;
+    Route::get('/professor/criarPergunta', [QuestController::class, 'index']);
 
-Route::get('/estudante', [StudentController::class, 'index']);/*->middleware('auth')*/
-Route::get('/estudante/{id}', [StudentController::class, 'show'])/*->middleware('token-validation')*/;
+});
 
-Route::get('/estudante/{id}/ranking', [RankingController::class, 'index']);
+Route::middleware('autenticacao:estudante')->group(function() {
 
-Route::get('/estudante/{id}/criarQuiz', [CreateQuizController::class, 'index']);
+    Route::get('/estudante/{id}', [StudentController::class, 'show'])/*->middleware('token-validation')*/;
 
-Route::get('/estudante/{id}/play', [PlayController::class, 'index']);
+    Route::get('/estudante/{id}/ranking', [RankingController::class, 'index']);
+    
+    Route::get('/estudante/{id}/criarQuiz', [CreateQuizController::class, 'index']);
+    
+    Route::get('/estudante/{id}/play', [PlayController::class, 'index']);
+    
+    Route::get('/estudante/{id}/historico', [MatcheController::class, 'index'])/*->middleware('token-validation')*/;
 
-Route::get('/estudante/{id}/historico', [MatcheController::class, 'index'])/*->middleware('token-validation')*/;
+});
 
-Route::get('/admin', [AdminController::class, 'index'])/*->middleware('auth')*/;
+Route::middleware('autenticacao:admin')->group(function() {
 
-Route::get('admin/solicitacoes', [SoliciacionsController::class, 'index'])/*->middleware('token-validation')*/;
+    Route::get('/admin/solicitacoes', [SoliciacionsController::class, 'index']);
 
-Route::get('/session',[SessionController::class, 'session']);
+});
+

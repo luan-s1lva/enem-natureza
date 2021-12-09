@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Models\Teacher;
+use App\Models\Admin;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -12,49 +13,47 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('login');
+        if (!session()->has('usuario')) {
+            return view('login');
+        } else {
+            if (session()->get('tipo') == 'estudante') {
+                return view('student');
+            } else if (session()->get('tipo') == 'professor') {
+                return view('teacher');
+            } else {
+                return view('admin');
+            }
+        }
     }
 
     public function check(Request $request)
     {
-        $estudante = new Student;
-        $professor = new Teacher;
-       
-        $estudante->email = $request->email;
-        $estudante->password = $request->password;
+        $email = $request->email;
+        $senha = $request->password;
 
-        $professor->email = $request->email;
-        $professor->password = $request->password;
-       
-        $studentsEmail = DB::table('students')->pluck('email');
-        $teachersEmail = DB::table('teachers')->pluck('email');
-
-        $studentPass = DB::table('students')->pluck('password');
-        $teachersPass = DB::table('teachers')->pluck('password');
-
-        foreach($studentsEmail as $emailAluno)
-        {
-            if($emailAluno == $estudante->email){
-                foreach($studentPass as $senhaEstudante){
-                    if(password_verify($estudante->password, $senhaEstudante)){
-                        return redirect('/estudante');
-                    }
+        $estudante = Student::where('email', $email)->first();
+        if ($estudante != null && Hash::check($senha, $estudante->password)) {
+            session(['usuario' => $estudante, 'tipo' => 'estudante']);
+        } else {
+            $professor = Teacher::where('email', $email)->first();
+            if ($professor != null && Hash::check($senha, $professor->password)) {
+                session(['usuario' => $professor, 'tipo' => 'professor']);
+            } else {
+                $admin = Admin::where('email', $email)->first();
+                if ($admin != null && Hash::check($senha, $admin->password)) {
+                    session(['usuario' => $admin, 'tipo' => 'admin']);
                 }
             }
         }
-        
-        
-        foreach($teachersEmail as $emailProfessor)
-        {
-            if($emailProfessor == $professor->email){ 
-                foreach($teachersPass as $senhaProfessor){
-                    if(password_verify($professor->password, $senhaProfessor)){
-                        return redirect('/professor');
-                    }
-                }
-            }
+        if (session()->has('usuario')) {
+            return redirect('/');
         }
         return redirect('/')->with('msg','Email ou Senha Incorretos!');
+    }
+
+    public function logout(Request $request) {
+        session()->flush();
+        return redirect('/');
     }
     
     /*

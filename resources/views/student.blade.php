@@ -27,6 +27,9 @@
         <div class="botoes">
             <a href="historico"> <button class="col"><img class="icons" src="/img/historico.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Histórico de Partidas</button></a>
         </div>
+        <div class="botoes">
+            <a href="/logout"> <button class="col"><img class="icons" src="/img/historico.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Logout</button></a>
+        </div>
     </div>
 
 </main>
