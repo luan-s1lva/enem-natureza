@@ -10,15 +10,15 @@
 <main class="container-fluid-md">
     <div class="row">
 
-        <form action="" method="POST" class="container-fluid">
-
+        <form action="/quest/store" method="POST" class="container-fluid">
+            @csrf
             <fieldset>
                 <br>
 
                 <div class="col-md">
                     <div class="container-fluid-md">
                         <label for="txt_nome">Seu nome: *</label>
-                        <input class="container-fluid box" type="text" name="seu_nome" id="txt_nome" required>
+                        <input class="container-fluid box" type="text" name="nome" id="txt_nome" required>
                     </div>
                 </div>
 
@@ -29,18 +29,6 @@
                     <div class="container-fluid-md">
                         <label for="txt_enun">Enunciado: *</label>
                         <textarea name="editor"></textarea>
-                    </div>
-                </div>
-
-                <br>
-                <div class="row"></div>
-
-                <div class="col-md">
-                    <div class="container-fluid-md">
-                        <label for="txt_arq">Adicionar imagem?</label>
-                        <br>
-                        <input type="checkbox" id="myCheck" onclick="myFunction()">
-                        <p id="text" style="display:none"><input type="file" name="arq" id="txt_arq"></p>
                     </div>
                 </div>
 
@@ -180,13 +168,13 @@
                     <div class="container-fluid-md">
                         <label>Dificuldade: *</label><br>
 
-                        <input type="radio" value="#" id="altFa" name="txt_alt_Difi" required>
+                        <input type="radio" value="1" id="altFa" name="dificulty" required>
                         <label for="altFa">Fácil</label><br>
 
-                        <input type="radio" value="#" id="altMe" name="txt_alt_Difi" required>
+                        <input type="radio" value="2" id="altMe" name="dificulty" required>
                         <label for="altMe">Médio</label><br>
 
-                        <input type="radio" value="#" id="altDi" name="txt_alt_Difi" required>
+                        <input type="radio" value="3" id="altDi" name="dificulty" required>
                         <label for="altDi">Difícil</label><br>
                     </div>
                 </div>

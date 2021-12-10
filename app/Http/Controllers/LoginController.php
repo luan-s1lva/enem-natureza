@@ -38,7 +38,7 @@ class LoginController extends Controller
         } else {
             $professor = Teacher::where('email', $email)->first();
             if ($professor != null && Hash::check($senha, $professor->password)) {
-                session(['usuario' => $professor, 'tipo' => 'professor', $professor->nome]);
+                session(['usuario' => $professor, 'tipo' => 'professor', 'nome'=>$professor->nome, 'id'=>$professor->id]);
             } else {
                 $admin = Admin::where('email', $email)->first();
                 if ($admin != null && Hash::check($senha, $admin->password)) {

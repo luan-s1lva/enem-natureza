@@ -37,6 +37,8 @@ Route::post('/student/store',[StudentController::class, 'store']);
 
 Route::post('/teacher/store',[TeacherController::class, 'store']);
 
+Route::post('/quest/store',[QuestController::class, 'store']);
+
 Route::middleware('autenticacao:professor')->group(function() {
 
     Route::get('/professor/criarPergunta', [QuestController::class, 'index']);
