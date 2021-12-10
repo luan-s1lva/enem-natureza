@@ -16,15 +16,17 @@ class QuestController extends Controller
         return view("quest");
     }
 
-        public function store(Request $request){
-            $perguntas = new Quest;
-            $perguntas->textQuest = $request->editor;
-            $perguntas->dificulty = $request->dificulty;
-            $perguntas->teacher_id = $request->session()->get('id');
-            $perguntas->save();
+    public function store(Request $request){
+        $perguntas = new Quest;
+        
+        $perguntas->textQuest = $request->editor;
+        $perguntas->dificulty = $request->dificulty;
+        $perguntas->teacher_id = $request->session()->get('id');
+        $perguntas->theme_id = $request->assuntos; //é assuntos o nome do seleenvie láct é assim que pega o valor
+        $perguntas->save();
             
 
-            return redirect("/");
+        return redirect("/");
             
-        }
+    }
 }
