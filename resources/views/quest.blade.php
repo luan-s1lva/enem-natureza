@@ -28,7 +28,7 @@
                 <div class="col-md">
                     <div class="container-fluid-md">
                         <label for="txt_enun">Enunciado: *</label>
-                        <textarea name="editor" required></textarea>
+                        <textarea name="editor1" id="editor1" required></textarea>
                     </div>
                 </div>
 
@@ -59,7 +59,7 @@
                             <select name="assuntos" id="assunMat" required>
                                 <option value="0">Selecione...</option>
 
-                                  <!--Química-->
+                                <!--Química-->
                                 <option value="1">Unidades de Medidas</option>
                                 <option value="2">Constituição da Matéria</option>
                                 <option value="3">Substâncias Químicas</option>
@@ -126,8 +126,8 @@
                                 <option value="63">Força Magnética</option>
                                 <option value="64">Indução Magnética</option>
 
-                                
-                                 <!--Biologia-->
+
+                                <!--Biologia-->
                                 <option value="65">Ecologia</option>
                                 <option value="66">Citologia</option>
                                 <option value="67">Citoplasma</option>
@@ -200,7 +200,4 @@
         </form>
     </div>
 </main>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-<script src="/js/scriptQuest.js"></script>
 @endsection
