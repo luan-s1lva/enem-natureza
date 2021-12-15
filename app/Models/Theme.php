@@ -9,9 +9,7 @@ class Theme extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'discipline_id',
-        'tema',
-
+        'theme',
     ];
     protected $hidden = [
         'idTema'

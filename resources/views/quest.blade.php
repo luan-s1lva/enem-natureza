@@ -28,7 +28,7 @@
                 <div class="col-md">
                     <div class="container-fluid-md">
                         <label for="txt_enun">Enunciado: *</label>
-                        <textarea name="editor"></textarea>
+                        <textarea name="editor" required></textarea>
                     </div>
                 </div>
 
@@ -41,11 +41,11 @@
                         <label>Selecione a matéria *</label>
                         <br>
                         <div>
-                            <select name="materia" id="matSel">
+                            <select name="disciplina" id="matSel" required>
                                 <option value="">Selecione...</option>
-                                <option value="opQuímica">Química</option>
-                                <option value="opFísica">Física</option>
-                                <option value="opBiologia">Biologia</option>
+                                @foreach($disciplinas as $disciplina)
+                                <option value="{{ $disciplina->id }}">{{ $disciplina->name }}</option>
+                                @endforeach
                             </select>
                         </div>
 
@@ -56,7 +56,7 @@
                             <label>Assuntos da matéria relacionada: *</label>
                             <br>
 
-                            <select name="assuntos" id="assunMat">
+                            <select name="assuntos" id="assunMat" required>
                                 <option value="0">Selecione...</option>
 
                                   <!--Química-->
@@ -125,6 +125,8 @@
                                 <option value="62">Campo Magnético</option>
                                 <option value="63">Força Magnética</option>
                                 <option value="64">Indução Magnética</option>
+
+                                
                                  <!--Biologia-->
                                 <option value="65">Ecologia</option>
                                 <option value="66">Citologia</option>
@@ -135,6 +137,9 @@
                                 <option value="71">Embriologia</option>
                                 <option value="72">Evolução</option>
                                 <option value="73">Bioquímica</option>
+                                <option value="74">Parasitologia</option>
+                                <option value="75">Botânica</option>
+                                <option value="76">Fisiologia Animal</option>
                             </select>
                         </div>
                     </div>
@@ -149,16 +154,16 @@
                         <br>
 
                         <label for="alt1"></label>
-                        <input type="radio" id="alt1" name="txt_alt" required><input class="container-fluid box" type="text" name="seu_nome" required><br>
+                        <input type="radio" id="alt1" name="alt_cert" value="0" required></input><input class="container-fluid box" type="text" name="alt_txt[]" required><br></input>
 
                         <label for="alt2"></label>
-                        <input type="radio" id="alt2" name="txt_alt" required><input class="container-fluid box" type="text" name="seu_nome" required><br>
+                        <input type="radio" id="alt2" name="alt_cert" value="1" required></input><input class="container-fluid box" type="text" name="alt_txt[]" required><br></input>
 
                         <label for="alt3"></label>
-                        <input type="radio" id="alt3" name="txt_alt" required><input class="container-fluid box" type="text" name="seu_nome" required><br>
+                        <input type="radio" id="alt3" name="alt_cert" value="2" required></input><input class="container-fluid box" type="text" name="alt_txt[]" required><br></input>
 
                         <label for="alt4"></label>
-                        <input type="radio" id="alt4" name="txt_alt" required><input class="container-fluid box" type="text" name="seu_nome" required><br>
+                        <input type="radio" id="alt4" name="alt_cert" value="3" required></input><input class="container-fluid box" type="text" name="alt_txt[]" required><br></input>
                     </div>
                 </div>
 

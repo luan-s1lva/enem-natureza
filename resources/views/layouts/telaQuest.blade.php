@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/editor.css">
     <link rel="stylesheet" href="@yield('css')">
-    <script src="//cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+    <!-- <script src="//cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script> -->
 </head>
 
 <body>

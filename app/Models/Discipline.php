@@ -9,7 +9,7 @@ class Discipline extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nome'
+        'name'
     ];
     protected $hidden = [
         'idDisciplina'

@@ -27,6 +27,13 @@ class TeacherController extends Controller
 
         $professor->save();
         
-        return redirect('/');
+        return redirect('/')->with('msg','Professor cadastrado com sucesso!');;
+    }
+
+    public function show($id)
+    {
+        $professor = Teacher::findOrFail($id);
+
+        return view('teacher', ['professor' => $professor]);
     }
 }
