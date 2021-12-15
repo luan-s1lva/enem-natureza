@@ -13,7 +13,7 @@ class QuestController extends Controller
 {
     function index()
     {
-        return view("quest", ['disciplinas' => Discipline::all()]);
+        return view("quest", ['disciplinas' => Discipline::all(),'temas' => Theme::all()]);
     }
 
     public function store(Request $request){

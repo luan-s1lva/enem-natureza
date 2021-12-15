@@ -43,9 +43,11 @@
                         <div>
                             <select name="disciplina" id="matSel" required>
                                 <option value="">Selecione...</option>
+
                                 @foreach($disciplinas as $disciplina)
                                 <option value="{{ $disciplina->id }}">{{ $disciplina->name }}</option>
                                 @endforeach
+
                             </select>
                         </div>
 
@@ -57,89 +59,12 @@
                             <br>
 
                             <select name="assuntos" id="assunMat" required>
-                                <option value="0">Selecione...</option>
+                                <option value="">Selecione...</option>
 
-                                <!--Química-->
-                                <option value="1">Unidades de Medidas</option>
-                                <option value="2">Constituição da Matéria</option>
-                                <option value="3">Substâncias Químicas</option>
-                                <option value="4">Misturas Heterogêneas e Homogêneas</option>
-                                <option value="5">Separação de Misturas</option>
-                                <option value="6">Propriedades Periódicas</option>
-                                <option value="7">Tabela Periódica</option>
-                                <option value="8">Dalton</option>
-                                <option value="9">Thompson</option>
-                                <option value="10">Rutherford</option>
-                                <option value="11">Bohr</option>
-                                <option value="12">Estabilidade dos Gases Nobres</option>
-                                <option value="13">Ligação Iônica</option>
-                                <option value="14">Ligação Covalente</option>
-                                <option value="15">Ligação Metálica</option>
-                                <option value="16">Regra do Octeto</option>
-                                <option value="17">Ligações Intermoleculares</option>
-                                <option value="18">Geometria Molecular</option>
-                                <option value="19">Desintegração Radiativa</option>
-                                <option value="20">Decaimento e Meia-vida</option>
-                                <option value="21">Massa Atômica (u)</option>
-                                <option value="22">Massa Molecular (MM)</option>
-                                <option value="23">Calor</option>
-                                <option value="24">Reações Endotermicas</option>
-                                <option value="25">Reações Exotermicas</option>
-                                <option value="26">Equilibrio Químico</option>
-                                <option value="27">Indicadores Ácido-Base e pH</option>
-                                <option value="28">Átomo de Carbono</option>
-                                <option value="29">Cadeias Carbônicas</option>
-                                <option value="30">Funções Orgânicas</option>
-                                <option value="31">Isomeria Plana</option>
-                                <option value="32">Isomeria Espacial</option>
+                                @foreach($temas as $tema)
+                                <option value="{{ $tema->id }}">{{ $tema->theme }}</option>
+                                @endforeach
 
-                                <!--FÍSICA-->
-                                <option value="34">Bases da Cinemática Escalar</option>
-                                <option value="35">Movimento Uniforme</option>
-                                <option value="36">Movimento Uniformemente Variado</option>
-                                <option value="37">Movimentos Circulares</option>
-                                <option value="38">Cinemática Vetorial</option>
-                                <option value="39">Princípios da Dinâmica</option>
-                                <option value="40">Leis de Newton</option>
-                                <option value="41">Atrito entre Sólidos</option>
-                                <option value="42">Gravitação</option>
-                                <option value="43">Resultantes Tangencial e Cetrípeta</option>
-                                <option value="44">Trabalho e Potência</option>
-                                <option value="45">Energia Mecânica</option>
-                                <option value="46">Quantidade de Movimento</option>
-                                <option value="47">Estática dos Sólidos</option>
-                                <option value="48">Estática dos Fluídos</option>
-                                <option value="49">Fundamentos da Óptica</option>
-                                <option value="50">Reflexão da Luz</option>
-                                <option value="51">Refração da Luz</option>
-                                <option value="52">Lentes Esféricas</option>
-                                <option value="53">Instrumentos Ópticos</option>
-                                <option value="54">MHS</option>
-                                <option value="55">Acústica</option>
-                                <option value="56">Ondas</option>
-                                <option value="57">Termometria</option>
-                                <option value="58">Calorimetria</option>
-                                <option value="59">Termodinâmica</option>
-                                <option value="60">Eletroestática</option>
-                                <option value="61">Eletrodinâmica</option>
-                                <option value="62">Campo Magnético</option>
-                                <option value="63">Força Magnética</option>
-                                <option value="64">Indução Magnética</option>
-
-
-                                <!--Biologia-->
-                                <option value="65">Ecologia</option>
-                                <option value="66">Citologia</option>
-                                <option value="67">Citoplasma</option>
-                                <option value="68">Núcleo Celular</option>
-                                <option value="69">Reprodução</option>
-                                <option value="70">Genética</option>
-                                <option value="71">Embriologia</option>
-                                <option value="72">Evolução</option>
-                                <option value="73">Bioquímica</option>
-                                <option value="74">Parasitologia</option>
-                                <option value="75">Botânica</option>
-                                <option value="76">Fisiologia Animal</option>
                             </select>
                         </div>
                     </div>
