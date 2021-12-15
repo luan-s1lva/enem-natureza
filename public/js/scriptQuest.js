@@ -1,22 +1,94 @@
-function myFunction() {
-    // Get the checkbox
-    var checkBox = document.getElementById("myCheck");
-    // Get the output text
-    var text = document.getElementById("text");
+var assuntos = ["Unidades de Medidas","Constituição da Matéria","Substâncias Químicas","Misturas Heterogêneas e Homogêneas","Separação de Misturas","Propriedades Periódicas","Tabela Periódica","Dalton","Thompson","Rutherford","Bohr","Estabilidade dos Gases Nobres","Ligação Iônica","Ligação Covalente","Ligação Metálica","Regra do Octeto","Ligações Intermoleculares","Geometria Molecular","Desintegração Radiativa","Decaimento e Meia-vida","Massa Atômica (u)","Massa Molecular (MM)","Calor","Reações Endotermicas","Reações Exotermicas","Equilibrio Químico","Indicadores Ácido-Base e pH","Átomo de Carbono","Cadeias Carbônicas","Funções Orgânicas","Isomeria Plana","Isomeria Espacial","Bases da Cinemática Escalar","Movimento Uniforme","Movimento Uniformemente Variado","Movimentos Circulares","Cinemática Vetorial","Princípios da Dinâmica","Leis de Newton","Atrito entre Sólidos","Gravitação","Resultantes Tangencial e Cetrípeta","Energia Mecânica","Quantidade de Movimento","Estática dos Sólidos","Estática dos Fluídos","Fundamentos da Óptica","Reflexão da Luz","Refração da Luz","Lentes Esféricas","Instrumentos Ópticos","MHS","Acústica","Ondas","Termometria","Calorimetria","Termodinâmica","Eletroestática","Eletrodinâmica","Campo Magnético","Força Magnética","Indução Magnética","Ecologia","Citologia","Citoplasma","Núcleo Celular","Reprodução","Genética","Embriologia","Evolução","Bioquímica"];
+
+function autocomplete(inp, arr) {
+
+  var currentFocus;
+
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+
+      this.parentNode.appendChild(a);
+
+      for (i = 0; i < arr.length; i++) {
+
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+
+          b = document.createElement("DIV");
+
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+ 
+              b.addEventListener("click", function(e) {
+
+              inp.value = this.getElementsByTagName("input")[0].value;
+
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+
+        currentFocus++;
+
+        addActive(x);
+      } else if (e.keyCode == 38) {
+
+        currentFocus--;
+
+        addActive(x);
+      } else if (e.keyCode == 13) {
+
+        e.preventDefault();
+        if (currentFocus > -1) {
+ 
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+ 
+    if (!x) return false;
   
-    // If the checkbox is checked, display the output text
-    if (checkBox.checked == true){
-      text.style.display = "block";
-    } else {
-      text.style.display = "none";
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+  
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
     }
   }
-  
-  let checkbox = $('txt_arq');
-  
-  if(checkbox.is(":checked")) {
-      console.log("O cliente não marcou o checkbox");
-      } else {
-      console.log("O cliente marcou o checkbox");
+  function closeAllLists(elmnt) {
+
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+      x[i].parentNode.removeChild(x[i]);
+    }
   }
-  
+}
+
+document.addEventListener("click", function (e) {
+    closeAllLists(e.target);
+});
+
+}

@@ -10,7 +10,7 @@
 <main class="container-fluid-md">
     <div class="row">
 
-        <form action="/quest/store" method="POST" class="container-fluid">
+        <form action="/quest/store" method="POST" autocomplete="off" class="container-fluid">
             @csrf
             <fieldset>
                 <br>
@@ -41,7 +41,7 @@
                         <label>Selecione a matéria *</label>
                         <br>
                         <div>
-                            <select name="disciplina" id="matSel" required>
+                            <select name="disciplina" id="matSel" class="select" required>
                                 <option value="">Selecione...</option>
 
                                 @foreach($disciplinas as $disciplina)
@@ -53,20 +53,19 @@
 
                         <br>
 
-                        <div>
+                            <div> 
+                                <label for="assuntos">Assuntos da matéria relacionada: *</label>
 
-                            <label>Assuntos da matéria relacionada: *</label>
-                            <br>
-
-                            <select name="assuntos" id="assunMat" required>
-                                <option value="">Selecione...</option>
-
+                                <div class="autobox">
+                                    <div class="autocomplete" style="width:300px;">
+                                        <input class="dosIrmao" id="myInput" type="text" name="assuntos" placeholder="Ex: Ecologia">
+                                    </div>
+                                </div>  
+                        
                                 @foreach($temas as $tema)
                                 <option value="{{ $tema->id }}">{{ $tema->theme }}</option>
                                 @endforeach
-
-                            </select>
-                        </div>
+                            </div>
                     </div>
                 </div>
 

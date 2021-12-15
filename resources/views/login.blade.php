@@ -37,14 +37,14 @@
                         <br>
                         <label for="txt_email">E-mail: </label>
                         <br>
-                        <input type="email" class="campo container" id="txt_email" name="email" placeholder="Ex.: aluno@gmail.com">
+                        <input type="email" class="campo container" id="txt_email" name="email" placeholder="Ex: aluno@gmail.com">
                     </div>
 
                     <div>
                         <br>
                         <label for="txt_password">Senha:</label>
                         <br>
-                        <input type="password" class="campo container" id="txt_password" name="password" placeholder="Ex:user123">
+                        <input type="password" class="campo container" id="txt_password" name="password" placeholder="Ex: user123">
                     </div>
 
                     <div class="text-center">

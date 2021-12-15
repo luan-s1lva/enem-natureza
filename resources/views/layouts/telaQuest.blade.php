@@ -32,4 +32,7 @@
     CKEDITOR.replace('editor1');
 </script>
 
+<script>
+    autocomplete(document.getElementById("myInput"), assuntos);
+</script>
 </html>

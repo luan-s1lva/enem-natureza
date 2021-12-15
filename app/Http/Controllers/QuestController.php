@@ -20,7 +20,7 @@ class QuestController extends Controller
         $perguntas = new Quest;
         $alternative1 = new Alternative;
 
-        $perguntas->textQuest = $request->editor;
+        $perguntas->textQuest = $request->editor1;
         $perguntas->dificulty = $request->dificulty;
         $perguntas->teacher_id = $request->session()->get('id');
         $perguntas->theme_id = $request->assuntos; //é assuntos o nome do seleenvie láct é assim que pega o valor
