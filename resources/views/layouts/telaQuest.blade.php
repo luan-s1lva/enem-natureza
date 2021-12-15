@@ -9,7 +9,6 @@
     <title>Enem Natureza</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="@yield('css')">
-
 </head>
 
 <body>
@@ -23,7 +22,7 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <script src="/js/scriptQuest.js"></script>
     <script src="/js/editor/ckeditor.js"></script>
@@ -33,6 +32,31 @@
 </script>
 
 <script>
-    autocomplete(document.getElementById("myInput"), assuntos);
+    $(function(){
+        $("#assuntos").hide();
+
+        $("#matSel").on('change', function(){
+            var select_default = $("<option>").val("").html("Selecione...");
+            if ($(this).val() === '') {
+                $("#assuntos").hide();
+            } else {
+                var select = $("select[name=tema_id]");
+                select.empty();
+                select.append(select_default);
+                $.ajax({
+                    url : "/professor/temas/listar/" + $(this).val(),
+                    success : function(data) {
+                        data.forEach(function(obj) {
+                            select.append($("<option>").val(obj.id).html(obj.theme));
+                        });
+                        $("#assuntos").show();
+                    },
+                    type : 'GET',
+                    dataType : 'json'
+                });
+            }
+        });
+    });
+    //autocomplete(document.getElementById("myInput"), assuntos);
 </script>
 </html>

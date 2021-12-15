@@ -43,6 +43,8 @@ Route::middleware('autenticacao:professor')->group(function() {
 
     Route::get('/professor/criarPergunta', [QuestController::class, 'index']);
 
+    Route::get('/professor/temas/listar/{id}', [QuestController::class, 'listar_temas']);
+
 });
 
 Route::middleware('autenticacao:estudante')->group(function() {

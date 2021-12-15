@@ -7,41 +7,25 @@
     <h1 class="fundo container-fluid-md col-md">Crie sua pergunta</h1>
 </header>
 
-<main class="container-fluid-md">
+<main class="container-fluid-md" style="padding-top:20px;">
     <div class="row">
 
         <form action="/quest/store" method="POST" autocomplete="off" class="container-fluid">
             @csrf
             <fieldset>
-                <br>
-
-                <div class="col-md">
-                    <div class="container-fluid-md">
-                        <label for="txt_nome">Seu nome: *</label>
-                        <input class="container-fluid box" type="text" name="nome" id="txt_nome" required>
-                    </div>
-                </div>
-
-                <br>
-                <div class="row"></div>
-
                 <div class="col-md">
                     <div class="container-fluid-md">
                         <label for="txt_enun">Enunciado: *</label>
                         <textarea name="editor1" id="editor1" required></textarea>
                     </div>
                 </div>
-
-                <br>
-                <div class="row"></div>
-
                 <div class="col-md">
                     <div class="container-fluid-md">
 
                         <label>Selecione a matéria *</label>
                         <br>
                         <div>
-                            <select name="disciplina" id="matSel" class="select" required>
+                            <select id="matSel" class="select" required>
                                 <option value="">Selecione...</option>
 
                                 @foreach($disciplinas as $disciplina)
@@ -53,18 +37,17 @@
 
                         <br>
 
-                            <div> 
+                            <div id="assuntos"> 
                                 <label for="assuntos">Assuntos da matéria relacionada: *</label>
 
-                                <div class="autobox">
+                                <select name="tema_id" class="select" required>
+                                    <option value="">Selecione...</option>
+                                </select>
+                                <!-- <div class="autobox">
                                     <div class="autocomplete" style="width:300px;">
                                         <input class="dosIrmao" id="myInput" type="text" name="assuntos" placeholder="Ex: Ecologia">
                                     </div>
-                                </div>  
-                        
-                                @foreach($temas as $tema)
-                                <option value="{{ $tema->id }}">{{ $tema->theme }}</option>
-                                @endforeach
+                                </div> --> 
                             </div>
                     </div>
                 </div>

@@ -10,6 +10,7 @@ class Alternative extends Model
     use HasFactory;
     protected $fillable = [
         'texto',
+        'isTrue'
     ];
 
     protected $hidden = [

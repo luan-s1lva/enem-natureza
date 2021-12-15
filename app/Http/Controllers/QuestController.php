@@ -17,19 +17,30 @@ class QuestController extends Controller
     }
 
     public function store(Request $request){
-        $perguntas = new Quest;
-        $alternative1 = new Alternative;
-
-        $perguntas->textQuest = $request->editor1;
-        $perguntas->dificulty = $request->dificulty;
-        $perguntas->teacher_id = $request->session()->get('id');
-        $perguntas->theme_id = $request->assuntos; //é assuntos o nome do seleenvie láct é assim que pega o valor
-        $perguntas->save();
+        $pergunta = new Quest;
+        $pergunta->textQuest = $request->editor1;
+        $pergunta->dificulty = $request->dificulty;
+        $pergunta->teacher_id = $request->session()->get('id');
+        $pergunta->theme_id = $request->tema_id;
+        $pergunta->save();
         
-        $alternative1->
-        $pergunta->alternatives()->save($alternative1);
+        foreach ($request->alt_txt as $index => $texto) {
+            $correta = false;
+            if ($index == $request->alt_cert) {
+                $correta = true;
+            }
+            $pergunta->alternatives()->save(new Alternative([
+                'texto' => $texto,
+                'isTrue' => $correta
+            ])); 
+        }
 
-        return redirect("/");
-            
+        return redirect("/");            
+    }
+
+    public function listar_temas($id) {
+        $discipline = Discipline::find($id);
+        // fazer tratamento
+        return $discipline->temas()->get();
     }
 }
