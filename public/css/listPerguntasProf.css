@@ -39,7 +39,7 @@ button {
     font-weight: bold;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 9px #999;
+    box-shadow: 0 5px #999;
 }
 
 button:hover {
@@ -63,8 +63,8 @@ footer a {
 }
 
 .voltar {
-    margin-top: 50px;
     margin-bottom: 20px;
+    margin-left: 5px;
 }
 
 .pergunta {

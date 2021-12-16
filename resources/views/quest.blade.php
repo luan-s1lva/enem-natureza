@@ -52,9 +52,6 @@
                     </div>
                 </div>
 
-                <br>
-                <div class="row"></div>
-
                 <div class="col-md">
                     <div class="container-fluid-md">
                         <label>Alternativas da sua pergunta: * (Selecione apenas o botão da resposta correta)</label>

@@ -58,7 +58,7 @@ Route::middleware('autenticacao:estudante')->group(function () {
 
     Route::get('/estudante/{id}', [StudentController::class, 'show']);
 
-    Route::get('/ranking/mostrar', [RankingController::class, 'index']);
+    Route::get('/ranking/mostrar', [RankingController::class, 'show']);
 
     Route::get('/criarQuiz', [CreateQuizController::class, 'index']);
 

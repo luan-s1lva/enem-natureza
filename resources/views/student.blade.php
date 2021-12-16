@@ -12,17 +12,15 @@
 </header>
 <br>
 <main class="container">
-    <div class="row-cols-1">
-
+    <div class="row row-cols-1 row-cols-sm-2">
         <div class="botoes">
-
-            <button class="col"><img class="icons" src="/img/cerebro.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Campanha</button>
+            <a href=""><button class="col"><img class="icons" src="/img/cerebro.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Campanha</button></a>
         </div>
         <div class="botoes">
             <a href="/criarQuiz"><button class="col"><img class="icons" src="/img/livros.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Dividido por Assuntos</button></a>
         </div>
         <div class="botoes">
-            <a href="/ranking"> <button class="col"><img class="icons" src="/img/ranking.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Vizualizar Ranking</button></a>
+            <a href="/ranking/mostrar"> <button class="col"><img class="icons" src="/img/ranking.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Vizualizar Ranking</button></a>
         </div>
         <div class="botoes">
             <a href="/historico"> <button class="col"><img class="icons" src="/img/historico.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Histórico de Partidas</button></a>

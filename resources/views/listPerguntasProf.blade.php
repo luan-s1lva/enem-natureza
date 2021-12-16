@@ -4,11 +4,12 @@
 
 @section('content')
 <div class="container">
-    <div class="voltar" style="float:left"><a href="/"><button>Voltar</button></a></div>
-    <header class="">
+    <header class="container">
         <h1 class="fundo">Suas Perguntas Cadastradas</h1>
     </header>
 </div>
+
+<div class="voltar"><a href="/"><button>Voltar</button></a></div>
 
 <main>
 
