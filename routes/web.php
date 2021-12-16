@@ -25,45 +25,49 @@ use App\Http\Controllers\SolicitacionsController;
 use App\Http\Controllers\PlayController;
 use App\Http\Controllers\CreateQuizController;
 
+
 Route::get('/', [LoginController::class, 'index']);
 
-Route::post('/login/check',[LoginController::class, 'check']);
+Route::post('/login/check', [LoginController::class, 'check']);
 
-Route::get('/logout',[LoginController::class, 'logout']);
+Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::get('/cadastro', [CadastroController::class, 'index']);
 
-Route::post('/student/store',[StudentController::class, 'store']); 
+Route::post('/student/store', [StudentController::class, 'store']);
 
-Route::post('/teacher/store',[TeacherController::class, 'store']);
+Route::post('/teacher/store', [TeacherController::class, 'store']);
 
-Route::post('/quest/store',[QuestController::class, 'store']);
+Route::post('/quest/store', [QuestController::class, 'store']);
 
-Route::middleware('autenticacao:professor')->group(function() {
+Route::middleware('autenticacao:professor')->group(function () {
 
-    Route::get('/professor/criarPergunta', [QuestController::class, 'index']);
+    Route::get('/criarPergunta', [QuestController::class, 'index']);
 
-    Route::get('/professor/temas/listar/{id}', [QuestController::class, 'listar_temas']);
+    Route::get('/temas/listar/{id}', [QuestController::class, 'listar_temas']);
 
+    Route::get('/suasPerguntas', [QuestController::class, 'listar_perguntasProf']);
+
+
+    Route::get('/editarPergunta/{id}', [QuestController::class, 'editarPergunta']);
+
+    Route::get('/listarPerguntas', [QuestController::class, 'listarPerguntas']);
 });
 
-Route::middleware('autenticacao:estudante')->group(function() {
+Route::middleware('autenticacao:estudante')->group(function () {
 
-    Route::get('/estudante/{id}', [StudentController::class, 'show'])/*->middleware('token-validation')*/;
+    Route::get('/estudante/{id}', [StudentController::class, 'show']);
 
-    Route::get('/ranking', [RankingController::class, 'index']);
-    
+    Route::get('/ranking/mostrar', [RankingController::class, 'index']);
+
     Route::get('/criarQuiz', [CreateQuizController::class, 'index']);
-    
-    Route::get('/play', [PlayController::class, 'index']);
-    
-    Route::get('/historico', [MatcheController::class, 'index'])/*->middleware('token-validation')*/;
 
+    Route::get('/play', [PlayController::class, 'index']);
+
+    Route::get('/historico', [MatcheController::class, 'index']);
 });
 
-Route::middleware('autenticacao:admin')->group(function() {
+Route::middleware('autenticacao:admin')->group(function () {
 
     Route::get('/solicitacoes', [SoliciacionsController::class, 'index']);
-
 });
-

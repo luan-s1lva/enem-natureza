@@ -12,13 +12,16 @@
 
 <body>
     @yield('content')
-    <footer class="text-center">
-        <div class="container">
-            <p>Todos os direitos reservados <span class="copyleft font-weight-bold">&copy; ENEM NATUREZA </span> </p>
-            <p class="font-weight-bold" style="margin-bottom:0;">Contato</p>
-            <a href="mailto:enem.naturezaadm@gmail.com">enem.naturezaadm@gmail.com</a>
-        </div>
-    </footer>
+    <div class="footerBottom">
+        <footer class="text-center">
+            <div class="container">
+                <p>Todos os direitos reservados <span class="copyleft font-weight-bold">&copy; ENEM NATUREZA </span> </p>
+                <p class="font-weight-bold" style="margin-bottom:0;">Contato</p>
+                <a href="mailto:enem.naturezaadm@gmail.com">enem.naturezaadm@gmail.com</a>
+            </div>
+        </footer>
+    </div>
+    <script src="/js/scriptRanking.js"></script>
 </body>
 
 </html>

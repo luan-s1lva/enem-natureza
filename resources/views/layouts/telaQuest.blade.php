@@ -44,7 +44,7 @@
                 select.empty();
                 select.append(select_default);
                 $.ajax({
-                    url : "/professor/temas/listar/" + $(this).val(),
+                    url : "/temas/listar/" + $(this).val(),
                     success : function(data) {
                         data.forEach(function(obj) {
                             select.append($("<option>").val(obj.id).html(obj.theme));

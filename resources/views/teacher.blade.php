@@ -26,9 +26,10 @@
     </div>
 
     <div class="text-center row row-cols-1 row-cols-sm-3" style="width:85%; margin:auto; margin-top:40px;">
-        <a href="/professor/criarPergunta"><button class="col container" tabindex="1">CADASTRAR PERGUNTA</button></a>
-        <button class="col container" tabindex="2">EDITAR PERGUNTA</button>
-        <a href="/logout"><button class="col container" >LOGOUT</button></a>
+        <a href="/criarPergunta"><button class="col container" tabindex="1">CADASTRAR PERGUNTA</button></a>
+        <a href="/suasPerguntas"><button class="col container" tabindex="2">SUAS PERGUNTAS CADASTRADAS</button></a>
+        <a href="/listarPerguntas"><button class="col container" tabindex="3">LISTAR TODAS AS PERGUNTAS</button></a>
+        <a href="/logout"><button class="col container">LOGOUT</button></a>
     </div>
 
 </div>

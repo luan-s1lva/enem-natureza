@@ -1,0 +1,87 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('/img/backG.png');
+    background-size: 100%;
+}
+
+header {
+    padding-top: 15px;
+}
+
+h1, .fundo {
+    text-align: center;
+    color: rgba(27, 116, 68, 0.6);
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 24px;
+    font-weight: 900;
+    border-radius: 15px;
+    padding-bottom: 3px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    text-align: center;
+    color: rgba(27, 116, 68, 0.6);
+    font-weight: 900;
+}
+
+a {
+    margin-bottom: 10px;
+}
+
+button {
+    font-size: 15px;
+    padding: 5px;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 9px #999;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 255, 0.712);
+    color: white;
+}
+
+footer {
+    background-color: white;
+    padding: 18px;
+    margin-top: 35px;
+    color: rgb(64, 143, 45);
+}
+
+footer a {
+    margin-bottom: 35px;
+}
+
+.footerBottom {
+    padding-top: 10em;
+}
+
+.voltar {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.pergunta {
+    width: 90%;
+    max-height: 400px;
+    overflow: auto;
+}
+
+.espaco {
+    margin-top: 50px;
+}
+
+.textQuest {
+    margin: 15px;
+}
+
+.icon {
+    width: 50px;
+    height: 40px;
+}
