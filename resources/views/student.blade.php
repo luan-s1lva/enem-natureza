@@ -1,8 +1,8 @@
 @extends('layouts.telas')
 @section('css', '/css/alunoStyle.css')
 @section('content')
-<header class="container text-center text-light">
-    <div class="userFace"></div>
+<header class="container text-center">
+    <img class="userFace img-fluid" src="/img/perfil/{{$usuario->img}}" alt="Sua foto de Perfil">
     <h1>{{ $usuario->name }}</h1>
     <hr>
     <h2>{{ $usuario->org }}</h2>
@@ -10,7 +10,7 @@
     <h3>Seu Nível: {{ (int) ($usuario->xp / 100) }}</h3>
     <div style="line-height:50px" class="level text-dark">{{ $usuario->xp % 100 }}/100</div>
 </header>
-<br>
+
 <main class="container">
     <div class="row row-cols-1 row-cols-sm-2">
         <div class="botoes">

@@ -7,7 +7,7 @@
     </header>
 
     <div class="container" style="text-align:center;">
-        <img src="/img/cerebro.png" alt="">
+        <img class="userFace" src="/img/perfil/{{$usuario->img}}" alt="Sua foto de Perfil">
     </div>
 </section>
 

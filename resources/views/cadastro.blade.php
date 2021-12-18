@@ -13,89 +13,92 @@
 
 <body class="container">
 
-    <main class="container-fluid">
+    <main>
 
-        <div class="row row-cols-1 row-cols-sm-1 row-cols-xl-2 row-cols-lg-2 row-cols-xs-2  row-cols-md-2 container" id="centro">
-            <div class="col">
-                <img src="/img/logoNatureza.jpeg" class="img-fluid container-fluid" alt="Logo do ENEM NATUREZA">
+        <div class="logo">
+            <div class="text-center">
+                <img src="/img/logoNatureza.jpeg" class="img-fluid" alt="Logo do ENEM NATUREZA">
             </div>
 
-            <div class="col container">
 
-                <h1 class="text-center text-light">
-                    CADASTRO:
-                </h1>
+            <h1 class="text-center text-light">
+                CADASTRO:
+            </h1>
 
-                <form action="/student/store" id="cadastro" method="POST" class="container">
-                    @csrf
+            <form action="/student/store" id="cadastro" method="POST" enctype="multipart/form-data">
+                @csrf
+
+                <div class="form-group">
+                    <label for="txt_nome">Nome: </label>
+                    <input type="text" class="campo form-control" id="txt_nome" name="name" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="txt_org">Instituição: </label>
+                    <input type="text" class="campo form-control" id="txt_org" name="org" placeholder="Digite o nome da sua instituição" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="file_img">Foto de Perfil: </label>
+                    <input type="file" class="form-control-file" id="file_img" name="img" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="txt_email">E-mail: </label>
+                    <input type="email" class="campo form-control" id="txt_email" name="email" placeholder="Digite seu email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="txt_password">Senha:</label>
+                    <input type="password" class="campo form-control" id="txt_password" name="password" placeholder="Digite sua senha" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date_Nasci">Data de nascimento:</label>
+                    <input type="date" class="campo form-control" id="date_Nasci" name="dataNas" required>
+                </div>
+
+                <div onchange="trocar();">
                     <div>
-                        <br>
-                        <label for="txt_nome">Nome: </label>
-                        <br>
-                        <input type="text" class="campo container" id="txt_nome" name="name" placeholder="Digite seu nome">
+                        <input type="radio" name="radClasse" id="isProfessor" value="1" required>
+                        <label class="radioLabel" for="isProfessor">Sou Professor</label>
                     </div>
-                    <div>
-                        <br>
-                        <label for="txt_org">Instituição: </label>
-                        <br>
-                        <input type="text" class="campo container" id="txt_org" name="org" placeholder="Digite o nome da sua instituição">
-                    </div>
-                    <div>
-                        <br>
-                        <label for="txt_email">E-mail: </label>
-                        <br>
-                        <input type="email" class="campo container" id="txt_email" name="email" placeholder="Digite seu email">
+
+                    <div class="form-group" id="m1" hidden>
+                        <label for="txt_lattes">Lattes:</label>
+                        <input id="check_professor" type="text" class="campo form-control" id="txt_lattes" name="lattes" placeholder="Informe seu lattes">
                     </div>
 
                     <div>
-                        <br>
-                        <label for="txt_password">Senha:</label>
-                        <br>
-                        <input type="password" class="campo container" id="txt_password" name="password" placeholder="Digite sua senha">
-                    </div>
-
-                    <div>
-                        <br>
-                        <label for="date_Nasci">Data de nascimento:</label>
-                        <br>
-                        <input type="date" class="campo container" id="date_Nasci" name="dataNas">
-                    </div>
-
-                        <div class="container" onchange="trocar();">
-
-                        <input type="radio" name="radClasse"  id="isProfessor" value="1">
-                        <label class="radio" for="isProfessor">Sou Professor</label>
-                        <div class="container" id="m1" hidden>
-                            <label for="txt_lattes">Lattes:</label>
-                            <br>
-                            <input type="text" class="campo container" id="txt_lattes" name="lattes" placeholder="Informe seu lattes">
-                        </div>
-                        <br>
                         <input type="radio" name="radClasse" id="isEstudante" value="2">
-                        <label class="radio" for="isEstudante">Sou Estudante</label>
-
-                        <div class="container" id="m2" hidden>
-                            <label for="sel_serie">Série:</label>
-                            <br>
-                            <select name="serie" id="sel_serie" class="campo container">
-                                <option value="">Selecione...</option>
-                                <option value="1">1° ano</option>
-                                <option value="2">2° ano</option>
-                                <option value="3">3° ano</option>
-                            </select>
-                        </div>
+                        <label class="radioLabel" for="isEstudante">Sou Estudante</label>
                     </div>
 
+                    <div class="form-group" id="m2" hidden>
+                        <label for="sel_serie">Série:</label>
 
-                    <div class="botoes text-center">
-                        <button class="botao"><a href="/">Voltar</a></button>
-
-                        <input class="botao" type="submit" value="Cadastrar">
+                        <select id="check_aluno" name="serie" id="sel_serie" class="campo custom-select">
+                            <option value="">Selecione...</option>
+                            <option value="1">1° ano</option>
+                            <option value="2">2° ano</option>
+                            <option value="3">3° ano</option>
+                        </select>
                     </div>
 
-                </form>
-            </div>
+                </div>
+
+
+                <div class="btnSpace">
+                    <button class="botao btn btn-primary"><a href="/">Voltar</a></button>
+                </div>
+                <div class="btnSpace">
+                    <input class="botao btn btn-primary" type="submit" value="Cadastrar">
+
+                </div>
+
+            </form>
         </div>
+
     </main>
 </body>
 

@@ -25,6 +25,13 @@ class TeacherController extends Controller
         $professor->password = Hash::make($request->password);
         $professor->lattes = $request->lattes;
 
+        if ($request->hasfile('img') && $request->file('img')->isValid()) {
+            $requestImg = $request->img;
+            $extesion = $requestImg->extension();
+            $imageName = md5($requestImg->getClientOriginalName() . strtotime('now') . '.' . $extesion);
+            $request->img->move(public_path('img/perfil'), $imageName);
+            $professor->img = $imageName;
+        }
         $professor->save();
         
         return redirect('/')->with('msg','Professor cadastrado com sucesso!');;

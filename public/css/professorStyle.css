@@ -1,8 +1,7 @@
 body, html {
-    background-image: url("/img/backG.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-image: url("/img/bg-teacher.png");
+    background-repeat: round;
+    background-size: contain;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -24,14 +23,6 @@ img {
     width: 210px;
 }
 
-.info {
-    margin-top: 16px;
-    background-color: white;
-    border-radius: 25px 25px 25px 25px;
-    padding: 12px;
-    width: 90%;
-    overflow: hidden;
-}
 
 button {
     height: 80px;
@@ -63,4 +54,21 @@ footer {
 
 footer a {
     margin-bottom: 35px;
+}
+
+.info {
+    margin-top: 16px;
+    background-color: white;
+    border-radius: 25px 25px 25px 25px;
+    padding: 12px;
+    width: 90%;
+    overflow: hidden;
+}
+
+.userFace {
+    /* Local da img do User */
+    margin: auto;
+    width: 170px;
+    height: 170px;
+    border-radius: 10em;
 }

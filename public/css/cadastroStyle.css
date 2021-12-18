@@ -1,27 +1,28 @@
-#centro {
+/* #centro {
     margin-top: 30px;
     position: absolute;
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-}
+} */
 
 body {
     background-image: url('/img/backG.png');
     background-size: 100%;
     font-family: 'Roboto', sans-serif;
+    height: 100%;
 }
+
+
 
 main {
     margin-top: 30px;
-    height: 900px;
-    position: relative;
-    border: 8px solid whitesmoke;
-
 }
+
 
 form {
     margin: auto;
+    text-align: center;
 }
 
 h1 {
@@ -46,6 +47,10 @@ a {
     text-decoration: none;
 }
 
+div {
+    padding: 7px;
+}
+
 a:hover {
     color: white;
     text-decoration: none;
@@ -53,27 +58,29 @@ a:hover {
 }
 
 .botao {
-    background-color: #1199EE;
-    border-radius: 20px;
     color: white;
     width: 100px;
     font-weight: 700;
+    padding: 10px;
 }
 
-.botao:hover {
-    background-color: #2288aa;
+.btnSpace {
+    display: inline-block;
+    padding-right: 10px;
 }
 
-.botoes {
-    padding-top: 10px;
-}
 
 .campo {
     border-radius: 20px;
 }
 
-.radio {
+.radioLabel {
     font-size: 15pt;
-    padding-right: 10px;
     padding-top: 10px;
+}
+
+
+.form-group {
+    width: 70%;
+    margin: auto;
 }
