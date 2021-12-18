@@ -21,7 +21,6 @@
             </div>
         </footer>
     </div>
-    <script src="/js/scriptRanking.js"></script>
 </body>
 
 </html>

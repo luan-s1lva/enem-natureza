@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use Illuminate\Support\Facades\DB;
+
 
 class RankingController extends Controller
 {
@@ -12,8 +14,18 @@ class RankingController extends Controller
     }
 
     public function show(){
-        if (session()->has('usuario')) {
-            return view("ranking",session()->all());    
+
+        
+        $alunos = Student::orderBy('xp','desc')->get();
+        
+        $posicao = 0;
+        foreach($alunos as $indice => $aluno){
+            if(session()->get('usuario')->id == $aluno->id){
+                $posicao = $indice+1;
+
+            }
         }
+        return view("ranking",['alunos' => $alunos, 'posicao' => $posicao]);
+
     }
 }
