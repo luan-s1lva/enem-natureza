@@ -67,11 +67,10 @@ button:hover {
     background: skyblue;
 }
 
-.level {
+.progress-bar {
     /* Local do nível */
-    height: 50px;
-    background: white;
-    border-radius: 20px;
+    font-weight:bold;
+    font-size: 15pt;
 }
 
 .botoes {

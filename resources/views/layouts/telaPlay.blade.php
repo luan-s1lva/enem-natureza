@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,8 +18,8 @@
         <header class="row row-cols-xs-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-3">
 
             <div class="text-center container">
-                <img src="@yield('tempo')" alt="Cronometro" style="height:120px;">
-                <p class="text-light text-center" style="font-size:2em; display:inline;">05:00</p>
+                <img src="@yield('temporizador')" alt="Cronometro" style="height:120px;">
+                <p class="text-light text-center" style="font-size:2em; display:inline;">2:30</p>
             </div>
 
             <h2 class="text-light text-center container-fluid">@yield('disci'): Nível @yield('dificuty')</h2>
@@ -32,15 +33,14 @@
         </header>
 
         <div class="container text-justify" style="padding: 26px; background-color: white; border-radius: 20px; margin-top:25px; margin-bottom:25px;">
-            <p>@yield('questText')
-            </p>
+            <p>@yield('questText')</p>
         </div>
 
         <div class="row row-cols-2 " style="margin:auto;">
-            <button type="button" class="col">@yield('resp1')</button>
-            <button type="button" class="col ">@yield('resp2')</button>
-            <button type="button" class="col ">@yield('resp3')</button>
-            <button type="button" class="col ">@yield('resp4')</button>
+            <button type="button" class="col">@yield('alt1')</button>
+            <button type="button" class="col ">@yield('alt2')</button>
+            <button type="button" class="col ">@yield('alt3')</button>
+            <button type="button" class="col ">@yield('alt4')</button>
         </div>
     </main>
     <footer class="container-fluid text-center">

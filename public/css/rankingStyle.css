@@ -7,9 +7,10 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-header{
+header {
     margin-top: 20px;
 }
+
 h1 {
     font-size: 24px;
     font-style: italic;
@@ -19,6 +20,39 @@ h1 {
     text-align: center;
     color: rgba(27, 116, 68, 0.6);
     padding-top: 3px;
+}
+
+button {
+    font-size: 15px;
+    padding: 5px;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px #999;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 255, 0.712);
+    color: white;
+}
+
+p {
+    color: rgb(64, 143, 45);
+}
+
+section {
+    padding-bottom: 20px;
+}
+
+footer {
+    background-color: white;
+    padding: 18px;
+    margin-top: 35px;
+    color: rgb(64, 143, 45);
+}
+
+footer a {
+    margin-bottom: 35px;
 }
 
 .fundo2 {
@@ -31,9 +65,7 @@ h1 {
     margin: auto;
 }
 
-p {
-    color: rgb(64, 143, 45);
-}
+
 
 #linha {
     border: 1px solid #44CC22;
@@ -43,13 +75,63 @@ p {
     float: left;
 }
 
-footer {
-    background-color: white;
-    padding: 18px;
-    margin-top: 35px;
-    color: rgb(64, 143, 45);
+.lugar {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 900;
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 70px
 }
 
-footer a {
-    margin-bottom: 35px;
+.pontos {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 900;
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 70px
+}
+
+.img {
+    text-align: center;
+    font-weight: 900;
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 20px
+}
+
+.posicao {
+    margin-top: 1.6em;
+    font-size: 21px;
+    font-style: italic;
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+}
+
+
+.nome {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-weight: 700;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.xp {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-weight: 900;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.voltar {
+    margin-bottom: 20px;
+    margin-left: 5px;
 }

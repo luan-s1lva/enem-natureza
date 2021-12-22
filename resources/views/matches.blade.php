@@ -5,6 +5,7 @@
 <header class="container text-center">
     <h1>Histórico de Partidas:</h1>
 </header>
+<div class="voltar"><a href="/"><button>Voltar</button></a></div>
 <main class="container-fluid row-cols-lg-1 row-cols-md-2 text-center">
 
     <div id="partida" class="col">

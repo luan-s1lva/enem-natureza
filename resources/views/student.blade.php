@@ -1,6 +1,9 @@
 @extends('layouts.telas')
 @section('css', '/css/alunoStyle.css')
 @section('content')
+<?php 
+$tamanho = $usuario->xp % 100;
+?>
 <header class="container text-center">
     <img class="userFace img-fluid" src="/img/perfil/{{$usuario->img}}" alt="Sua foto de Perfil">
     <h1>{{ $usuario->name }}</h1>
@@ -8,13 +11,15 @@
     <h2>{{ $usuario->org }}</h2>
     <hr>
     <h3>Seu Nível: {{ (int) ($usuario->xp / 100) }}</h3>
-    <div style="line-height:50px" class="level text-dark">{{ $usuario->xp % 100 }}/100</div>
+    <div class="progress" style="height:35px;">
+        <div class="progress-bar" style="width:<?php echo $tamanho ?>%;" role="progressbar" aria-valuenow="{{ $usuario->xp % 100 }}" aria-valuemin="0" aria-valuemax="100">{{ $usuario->xp % 100 }}/100</div>
+    </div>
 </header>
 
 <main class="container">
     <div class="row row-cols-1 row-cols-sm-2">
         <div class="botoes">
-            <a href=""><button class="col"><img class="icons" src="/img/cerebro.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Campanha</button></a>
+            <a href="/play"><button class="col"><img class="icons" src="/img/cerebro.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Campanha</button></a>
         </div>
         <div class="botoes">
             <a href="/criarQuiz"><button class="col"><img class="icons" src="/img/livros.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Dividido por Assuntos</button></a>

@@ -18,6 +18,20 @@ h1 {
     text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.50);
 }
 
+button {
+    font-size: 15px;
+    padding: 5px;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px #999;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 255, 0.712);
+    color: white;
+}
+
 h2 {
     font-size: 18pt;
 
@@ -43,5 +57,5 @@ footer a {
 }
 
 #cardCorpo h2 {
-   padding-top: 10px;
+    padding-top: 10px;
 }
