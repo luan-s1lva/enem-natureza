@@ -2,7 +2,7 @@
 @section('css', '/css/alunoStyle.css')
 @section('content')
 <?php 
-$tamanho = $usuario->xp % 100;
+$tamanho = ($usuario->xp % 500) * 100 / 500;
 ?>
 <header class="container text-center">
     <img class="userFace img-fluid" src="/img/perfil/{{$usuario->img}}" alt="Sua foto de Perfil">
@@ -10,9 +10,9 @@ $tamanho = $usuario->xp % 100;
     <hr>
     <h2>{{ $usuario->org }}</h2>
     <hr>
-    <h3>Seu Nível: {{ (int) ($usuario->xp / 100) }}</h3>
-    <div class="progress" style="height:35px;">
-        <div class="progress-bar" style="width:<?php echo $tamanho ?>%;" role="progressbar" aria-valuenow="{{ $usuario->xp % 100 }}" aria-valuemin="0" aria-valuemax="100">{{ $usuario->xp % 100 }}/100</div>
+    <h3>Seu Nível: {{ (int) ($usuario->xp / 500) }}</h3>
+    <div class="progress text-center" style="height:35px;">
+        <div class="progress-bar" style="width:<?php echo $tamanho ?>%;" role="progressbar"  aria-valuemin="0" aria-valuenow="{{$usuario->xp %500}}" aria-valuemax="500"><p id='dentroBar' class='text-center'>{{ ($usuario->xp % 500) }} / 500</p></div>
     </div>
 </header>
 
