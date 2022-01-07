@@ -19,7 +19,7 @@ $tamanho = ($usuario->xp % 500) * 100 / 500;
 <main class="container">
     <div class="row row-cols-1 row-cols-sm-2">
         <div class="botoes">
-            <a href="/play"><button class="col"><img class="icons" src="/img/cerebro.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Campanha</button></a>
+            <a href="/sortear"><button class="col"><img class="icons" src="/img/cerebro.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Campanha</button></a>
         </div>
         <div class="botoes">
             <a href="/criarQuiz"><button class="col"><img class="icons" src="/img/livros.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Dividido por Assuntos</button></a>

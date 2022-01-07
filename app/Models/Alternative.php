@@ -15,7 +15,7 @@ class Alternative extends Model
 
     protected $hidden = [
         'idAlterna',
-        'idQuest',
+        'quest_id',
         'isTrue',
     ];
 

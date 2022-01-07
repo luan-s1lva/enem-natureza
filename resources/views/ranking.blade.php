@@ -6,7 +6,7 @@
 </header>
 <div class="voltar"><a href="/"><button>Voltar</button></a></div>
 
-<main class="container" style="margin-top: 150px;">
+<main class="container" style="margin-top: 10px;">
     <!--LINHA DO  USUARIO LOGADO-->
     <section class="row row-cols-3 " style="background-color:white; border-radius: 35px 35px 0 0;">
 

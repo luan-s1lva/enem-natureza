@@ -48,13 +48,14 @@ Route::middleware('autenticacao:professor')->group(function () {
 
     Route::get('/suasPerguntas', [QuestController::class, 'listar_perguntasProf']);
 
-
     Route::get('/editarPergunta/{id}', [QuestController::class, 'editarPergunta']);
 
     Route::get('/listarPerguntas', [QuestController::class, 'listarPerguntas']);
 });
 
 Route::middleware('autenticacao:estudante')->group(function () {
+
+    Route::get('/sortear', [PlayController::class, 'sortear']);
 
     Route::get('/estudante/{id}', [StudentController::class, 'show']);
 
