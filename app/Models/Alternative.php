@@ -10,11 +10,10 @@ class Alternative extends Model
     use HasFactory;
     protected $fillable = [
         'texto',
-        'isTrue'
     ];
 
     protected $hidden = [
-        'idAlterna',
+        'id',
         'quest_id',
         'isTrue',
     ];

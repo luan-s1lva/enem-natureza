@@ -11,11 +11,12 @@ class Quest extends Model
     protected $fillable = [
         'dificulty',
         'textQuest',
-        'theme'
+        'theme_id'
     ];
+    
     protected $hidden = [
-        'idQuest', 
-        'idTeacher'
+        'id', 
+        'teacher_id'
     ];
 
     public function theme()

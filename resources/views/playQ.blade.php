@@ -35,18 +35,16 @@
 
             <!--Pergunta-->
         <div class="container text-justify" style="padding: 26px; background-color: white; border-radius: 20px; margin-top:25px; margin-bottom:25px;">
-        @foreach($perguntas as $pergunta)
-             <p>{!! $pergunta->textQuest !!}</p>
-        @endforeach
+        
+         <p>{!! $perguntas->textQuest !!}</p>
+       
         </div>
 
             <!--Alternativas-->
         <div class="row row-cols-2 " style="margin:auto;">
-        @foreach($alternativas as $alt)
-            <button type="button" class="col">{ !! $alt[1] !!}</button>
-            <button type="button" class="col">{ $alt[2] }</button>
-            <button type="button" class="col">{ $alt[3] }</button>
-            <button type="button" class="col">{ $alt[4] }</button>
+
+        @foreach($perguntas->alternatives()->get() as $alt)
+            <button type="button" class="col">{{ $alt->texto }}</button>
         @endforeach
 
         </div>
