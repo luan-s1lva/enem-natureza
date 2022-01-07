@@ -55,7 +55,7 @@ Route::middleware('autenticacao:professor')->group(function () {
 
 Route::middleware('autenticacao:estudante')->group(function () {
 
-    Route::get('/sortear', [PlayController::class, 'sortear']);
+    Route::get('/sortear', [PlayController::class, 'sortearAll']);
 
     Route::get('/estudante/{id}', [StudentController::class, 'show']);
 

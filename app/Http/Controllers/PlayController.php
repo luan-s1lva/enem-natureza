@@ -8,26 +8,20 @@ use App\Models\Alternative;
 
 class PlayController extends Controller
 {
-    public function index(){
-        return view("playQ");
+    public function index()
+    {
+        return view ('playQ');
     }
 
-    public function sortear(){
+    public function sortearAll()
+    {
+        $qtd = Quest::count();
+        return Quest::with(['alternatives', 'theme', 'theme.discipline'])->get()->random($qtd >= 10 ? 10 : $qtd)->shuffle();
+    }
 
-        $perguntas = Quest::all()->random();
-        $alternative = new Alternative;
-        $alternativas[] = Alternative::where($perguntas->id = $alternative->quest_id)->get('texto');     
-        //$alternativas[] = Alternative::select('texto')->get();
-
-        $posicao = -1;
-
-        /*foreach($alternativas as $alternative){
-            if($perguntas->id == $alternative->quest_id){
-                //$posicao = $alternative->id;        
-            }
-        }*/ 
-      
-        return view ('playQ',['perguntas' => $perguntas , 'alternativas' => $alternativas , 'alternative' => $alternative]);
+    public function sortearEspecifico(Request $request)
+    {
+        
     }
 
 }

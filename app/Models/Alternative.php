@@ -14,8 +14,7 @@ class Alternative extends Model
 
     protected $hidden = [
         'id',
-        'quest_id',
-        'isTrue',
+        'quest_id'
     ];
 
     public function quests(){
