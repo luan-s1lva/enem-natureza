@@ -55,7 +55,6 @@ Route::middleware('autenticacao:professor')->group(function () {
 
 Route::middleware('autenticacao:estudante')->group(function () {
 
-    Route::get('/sortear', [PlayController::class, 'sortearAll']);
 
     Route::get('/estudante/{id}', [StudentController::class, 'show']);
 
@@ -64,7 +63,8 @@ Route::middleware('autenticacao:estudante')->group(function () {
     Route::get('/criarQuiz', [CreateQuizController::class, 'index']);
 
     Route::get('/play', [PlayController::class, 'index']);
-
+    Route::get('/sortear', [PlayController::class, 'sortearAll']);
+    
     Route::get('/historico', [MatcheController::class, 'index']);
 });
 

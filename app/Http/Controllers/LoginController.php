@@ -49,7 +49,7 @@ class LoginController extends Controller
         if (session()->has('usuario')) {
             return redirect('/');
         }
-        return redirect('/')->with('msg','Email ou Senha Incorretos!');
+        return redirect('/')->with('msg2','Email ou Senha incorretos!');
     }
 
     public function logout(Request $request) {

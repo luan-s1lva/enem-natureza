@@ -13,10 +13,15 @@
 <body class="container">
 
     <main class="container">
-        <div class="container-fluid">
-            <div class="msg row text-center text-danger">
+        <div class="">
+            <div class="msg row alert-success"  style="margin:10px auto; width:40%;">
                 @if(session('msg'))
                     <p class="msg">{{session('msg')}}</p> 
+                @endif    
+            </div>
+            <div class="msg row alert-danger"  style="margin:10px auto; width:40%;">
+                @if(session('msg2'))
+                    <p class="msg">{{session('msg2')}}</p> 
                 @endif    
             </div>
         </div>

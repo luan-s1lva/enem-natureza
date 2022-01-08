@@ -10,7 +10,7 @@ class PlayController extends Controller
 {
     public function index()
     {
-        return view ('playQ');
+        return view('playQ');
     }
 
     public function sortearAll()
@@ -21,7 +21,6 @@ class PlayController extends Controller
 
     public function sortearEspecifico(Request $request)
     {
-        
+        //divisao por assuntos
     }
-
 }
