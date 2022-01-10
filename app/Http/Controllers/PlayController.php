@@ -16,7 +16,7 @@ class PlayController extends Controller
     public function sortearAll()
     {
         $qtd = Quest::count();
-        return Quest::with(['alternatives', 'theme', 'theme.discipline'])->get()->random($qtd >= 12 ? 12 : $qtd)->shuffle();
+        return Quest::with(['alternatives', 'theme', 'theme.discipline'])->get()->random($qtd >= 6 ? 6 : $qtd)->shuffle();
     }
 
     public function sortearEspecifico(Request $request)
