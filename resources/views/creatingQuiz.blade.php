@@ -7,8 +7,8 @@
 <main class="container">
 
     <div class="disciplinas container row row-cols-3">
-        <button id="quimica" onclick="exibirQuimica()"><img class="icons" src="/img/timer_quimica.gif" alt="Gif: Temporizador de Química">Química</button>
-        <button id="fisica" onclick="exibirFisica()"><img class="icons" src="/img/timer_fisica.gif" alt="Gif: Temporizador de Física">Física</button>
+        <button id="quimica" onclick="exibirQuimica()"><img class="icons" src="/img/timer_química.gif" alt="Gif: Temporizador de Química">Química</button>
+        <button id="fisica" onclick="exibirFisica()"><img class="icons" src="/img/timer_física.gif" alt="Gif: Temporizador de Física">Física</button>
         <button id="biologia" onclick="exibirBiologia()"><img class="icons" src="/img/timer_biologia.gif" alt="Gif: Temporizador de Biologia">Biologia</button>
     </div>
 

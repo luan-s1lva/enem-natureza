@@ -18,7 +18,7 @@
         <header class="row row-cols-xs-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-3">
 
             <div class="text-center container">
-                <img id="timer_img" src="/img/timer_quimica.gif" alt="Cronometro" style="height:120px;">
+                <img id="timer_img" src="/img/timer_química.gif" alt="Cronometro" style="height:120px;">
                 <p id="cronometro" class="text-light text-center" style="font-size:2em; display:inline;">Aguarde...</p>
             </div>
 
