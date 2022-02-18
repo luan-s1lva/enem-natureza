@@ -36,7 +36,6 @@
                         </div>
 
                         <br>
-
                             <div id="assuntos"> 
                                 <label for="assuntos">Assuntos da matéria relacionada: *</label>
 

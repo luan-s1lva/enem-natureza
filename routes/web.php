@@ -55,6 +55,7 @@ Route::middleware('autenticacao:professor')->group(function () {
 
 Route::middleware('autenticacao:estudante')->group(function () {
 
+    Route::get('/assuntos/listar/' , [CreateQuizController::class, 'mostrarAssuntos']);
 
     Route::get('/estudante/{id}', [StudentController::class, 'show']);
 

@@ -27,6 +27,7 @@
     <script src="/js/scriptQuest.js"></script>
     <script src="/js/editor/ckeditor.js"></script>
 </body>
+
 <script>
     CKEDITOR.replace('editor1');
 </script>

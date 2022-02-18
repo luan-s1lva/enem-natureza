@@ -20,7 +20,7 @@
             <h3>Questão: </h2>
                 {!!$pergunta->textQuest!!} 
                 <a href="" style="float:right"><button><img class="img-fluid icon" src="/img/editar.png" alt="Icone Feito por Freepik: https://www.freepik.com"> EDITAR </button></a>
-
+            </h3>
         </section>
     </div>
     @endforeach
