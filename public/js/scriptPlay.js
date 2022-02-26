@@ -5,11 +5,23 @@ $(function () {
     time = null;
     timer = null;
     contAcertos = 0;
+    assuntos = $("#assuntos").data('array');
     //Animação antes de carregar as perguntas;
-    $.get('/sortear', function (data) {
-        quests = data;
-        feedQuest();
-    }, 'json');
+    if (assuntos.ids.length == 0)
+    {
+        $.get('/sortear', function (data) {
+            quests = data;
+            feedQuest();
+        }, 'json');
+    }
+    else
+    {
+        $.post('/sortear/especifico', {'ids[]' : assuntos.ids, '_token' : $("#_token").data('value')}, function (data) {
+            quests = data;
+            feedQuest();
+        }, 'json');
+    }
+    
     $('.resposta').on('click', function () {
         if (quests[current].alternatives[$(this).data('pos')].isTrue) {
             alert("Você acertou, parabéns!");

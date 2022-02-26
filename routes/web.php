@@ -55,7 +55,7 @@ Route::middleware('autenticacao:professor')->group(function () {
 
 Route::middleware('autenticacao:estudante')->group(function () {
 
-    Route::get('/assuntos/listar/' , [CreateQuizController::class, 'mostrarAssuntos']);
+    Route::get('/assuntos/listar/{idDiscipline}' , [CreateQuizController::class, 'mostrarAssuntos']);
 
     Route::get('/estudante/{id}', [StudentController::class, 'show']);
 
@@ -64,7 +64,9 @@ Route::middleware('autenticacao:estudante')->group(function () {
     Route::get('/criarQuiz', [CreateQuizController::class, 'index']);
 
     Route::get('/play', [PlayController::class, 'index']);
+    Route::post('/play/assunto', [PlayController::class, 'assunto']);
     Route::get('/sortear', [PlayController::class, 'sortearAll']);
+    Route::post('/sortear/especifico', [PlayController::class, 'sortearEspecifico']);
     
     Route::get('/historico', [MatcheController::class, 'index']);
 });

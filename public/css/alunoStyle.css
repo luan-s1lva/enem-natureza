@@ -83,8 +83,5 @@ button:hover {
 }
 
 #dentroBar{
-    position: absolute;
-    left: 47%;
-    padding-top: 14px;
     color: black;
 }

@@ -47,6 +47,8 @@
             <button type="button" data-pos="2" class="col resposta">Aguarde...</button>
             <button type="button" data-pos="3" class="col resposta">Aguarde...</button>
         </div>
+        <span id="assuntos" data-array="{{ (isset($result)) ? json_encode($result) : json_encode(['ids' => []]) }}"></span>
+        <span id="_token" data-value="{{ csrf_token() }}">
     </main>
 
 
