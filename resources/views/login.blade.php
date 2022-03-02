@@ -49,7 +49,9 @@
                         <br>
                         <label for="txt_password">Senha:</label>
                         <br>
-                        <input type="password" class="campo container" id="txt_password" name="password" placeholder="Ex: user123">
+                        <input style="display:inline" type="password" class="campo container" id="txt_password" name="password" placeholder="Ex: user123">
+                        <img id="senhaImg" src="/img/mostrarSenha.png" class="img-fluid" alt="Mostrar Senha">
+                        <input type="button" id="showPassword" value="Mostrar Senha" class="button"/>
                     </div>
 
                     <div class="text-center">
@@ -63,6 +65,9 @@
             </div>
         </div>
     </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="/js/scriptLogin.js"></script>
 </body>
 
 </html>

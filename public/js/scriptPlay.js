@@ -26,6 +26,7 @@ $(function () {
         if (quests[current].alternatives[$(this).data('pos')].isTrue) {
             alert("Você acertou, parabéns!");
             contAcertos++;
+            pontuar(quests[current].dificulty);
             // pontuar
         }
         else {
@@ -61,7 +62,7 @@ function feedQuest() {
     else {
         alert("Você respondeu todas as perguntas!\nAcertou: " + contAcertos + " Perguntas, parabéns!")
         window.location.replace('/');
-
+        
     }
 }
 
@@ -109,4 +110,19 @@ function translateDificulty(number) {
             return 'Difícil';
             break;
     }
-}
+
+    function pontuar(number) {
+        pontos = 0;
+        switch (number) {
+            case 1:
+                return pontos += 10;
+                break;
+            case 2:
+                return pontos += 20;
+                break;
+            case 3:
+                return pontos += 30;
+                break;
+        }     
+    }
+}   

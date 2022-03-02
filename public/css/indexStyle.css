@@ -70,3 +70,12 @@ a:hover{
     padding-right: 10px;
     padding-top: 10px;
 }
+
+.btn_senha{
+    cursor: pointer;
+    position: absolute;
+}
+
+#senhaImg{
+    height: 40px;
+}

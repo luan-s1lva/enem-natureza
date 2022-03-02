@@ -34,7 +34,6 @@
             id : "assuntos",
             style : "background-color:white; padding-top:15px"
         });
-        //aqui bagulho pra limpar a div, fernando botou no outro ajax
         escolher.empty();
         escolher.append(div);
         
@@ -42,7 +41,7 @@
             url: "/assuntos/listar/" + id,
             success: function(data) {
                 data.forEach(function(obj) {
-                    var p = $("<h4>").append($("<input>").attr({
+                    var p = $("<p>").append($("<input>").attr({
                         type : "checkbox",
                         name : "temas[]",
                         value : obj.id

@@ -20,13 +20,16 @@ class PlayController extends Controller
     }
 
     public function assunto(Request $request){
-        $ids = $request->temas;
-        $result = ["ids" => $ids];
-        return view('playQ', $result);
+        $ids = $request->temas; //pega os ids dos temas escolhidos
+        $result = ["ids" => $ids];//resultado vai seo array dos ids escolhidos
+        return view('playQ', $result);///Retornar o array para a view playQ    
     }
 
     public function sortearEspecifico(Request $request)
     {
-        return [];
+        $qtd = Quest::count();
+        return redirect([Quest::with(['alternatives', 'theme', 'theme.discipline'])->get()
+        ->random($qtd >= 12 ? 12 : $qtd)
+        ->where('theme_id', $result)])->route('/play/assunto');
     }    
 }

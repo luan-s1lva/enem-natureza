@@ -23,7 +23,7 @@
             </div>
 
                 <!--TITULO-->
-            <h2 class="text-light text-center container-fluid"><span id="disciplina">Aguarde...</span>: Nível <span id="nivel">Aguarde...</span></h2>
+            <h2 class="text-light text-center container-fluid"><span id="disciplina">Aguarde...</span></h2>
 
             <div class="text-center container" id="vidas">
                 <img src="/img/heart.gif" alt="imagem de um coração" style="height:80px;">
