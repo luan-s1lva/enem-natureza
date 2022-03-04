@@ -27,9 +27,11 @@ class PlayController extends Controller
 
     public function sortearEspecifico(Request $request)
     {
-        $qtd = Quest::count();
-        return redirect([Quest::with(['alternatives', 'theme', 'theme.discipline'])->get()
-        ->random($qtd >= 12 ? 12 : $qtd)
-        ->where('theme_id', $result)])->route('/play/assunto');
+        //$qtd = Quest::count();
+        $query = Quest::with(['alternatives', 'theme', 'theme.discipline'])
+        ->join('themes','themes.id', '=', 'quests.theme_id')
+        ->select('quests.*');
+        $ids = $request->json('ids');
+        return $ids;
     }    
 }
