@@ -52,12 +52,13 @@ class QuestController extends Controller
 
     public function listar_perguntasProf()
     {
-        return view('listPerguntasProf', ['perguntas' => Quest::all()]);
+        $logado = session()->get('id');
+        return view('listPerguntasProf', ['perguntas' => Quest::where('teacher_id',$logado)->get()]);
     }
 
     public function listarPerguntas()
     {
-        return view('salvasQuests',['perguntas'=>Quest::all()]);
+        return view('salvasQuests',['perguntas' => Quest::all()]);
     }
 
     public function edit($id)
@@ -65,8 +66,8 @@ class QuestController extends Controller
         $pergunta = Quest::find($id);
         $alternativas = $pergunta->alternatives()->get();
 
-        return view('editQuest', ['pergunta' => $pergunta,'disciplinas' => Discipline::all(), 'temas' => Theme::all()
-        ,'alternativas' => $alternativas]);
+        return view('editQuest', ['pergunta' => $pergunta, 'disciplinas' => Discipline::all(), 
+        'temas' => Theme::all(), 'alternativas' => $alternativas]);
     }
 
     public function update(Request $request)
