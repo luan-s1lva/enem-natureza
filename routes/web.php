@@ -48,7 +48,9 @@ Route::middleware('autenticacao:professor')->group(function () {
 
     Route::get('/suasPerguntas', [QuestController::class, 'listar_perguntasProf']);
 
-    Route::get('/editarPergunta/{id}', [QuestController::class, 'editarPergunta']);
+    Route::get('/editar/pergunta/{id}', [QuestController::class, 'edit']);
+    
+    Route::put('/quest/update/{{$pergunta->id}}', [QuestController::class, 'update']);
 
     Route::get('/listarPerguntas', [QuestController::class, 'listarPerguntas']);
 });

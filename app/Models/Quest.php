@@ -13,6 +13,8 @@ class Quest extends Model
         'textQuest',
         'theme_id'
     ];
+
+    protected $guarded = [];
     
     protected $hidden = [
         'id', 

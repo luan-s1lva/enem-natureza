@@ -16,14 +16,13 @@
 @foreach($perguntas as $pergunta)
     <div class="espaco">
         <section class="pergunta bg-white container-fluid">
-           
             <h3>Questão: </h2>
                 {!!$pergunta->textQuest!!} 
-                <a href="" style="float:right"><button><img class="img-fluid icon" src="/img/editar.png" alt="Icone Feito por Freepik: https://www.freepik.com"> EDITAR </button></a>
+                <a href="/editar/pergunta/{{ $pergunta->id }}" style="float:right"><img class="img-fluid icon" src="/img/editar.png" alt="Icone Feito por Freepik: https://www.freepik.com"> EDITAR </a>
             </h3>
         </section>
     </div>
-    @endforeach
+@endforeach
 
 
 

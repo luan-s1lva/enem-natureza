@@ -58,12 +58,21 @@ class QuestController extends Controller
     public function listarPerguntas()
     {
         return view('salvasQuests',['perguntas'=>Quest::all()]);
-        
     }
 
-    public function editarPergunta($id)
+    public function edit($id)
     {
-        return view('editarQuest');
-        $editPergunta = Quest::find($id);
+        $pergunta = Quest::find($id);
+        $alternativas = $pergunta->alternatives()->get();
+
+        return view('editQuest', ['pergunta' => $pergunta,'disciplinas' => Discipline::all(), 'temas' => Theme::all()
+        ,'alternativas' => $alternativas]);
+    }
+
+    public function update(Request $request)
+    {
+        Quest::find($request->id)->update($request->all());
+
+        return redirect('/suasPerguntas')->with('msg', 'Pergunta editada com sucesso!');
     }
 }
