@@ -19,7 +19,8 @@
             <h2>Questão: </h2>
             {!!$pergunta->textQuest!!}
             <a class="btnEditar" href="/editar/pergunta/{{ $pergunta->id }}">
-                <img class="img-fluid icon" src="/img/editar.png" alt="Icone Feito por Freepik: https://www.freepik.com">EDITAR</a>
+                <img class="img-fluid icon" src="/img/editar.png" alt="Icone Feito por Freepik: https://www.freepik.com">EDITAR
+            </a>
         </section>
     </div>
     @endforeach
