@@ -12,7 +12,7 @@
 
         <form action="/quest/update/{{$pergunta->id}}" method="POST" autocomplete="off" class="container-fluid">
             @csrf
-            @method('PUT')
+            @method('PUT')  
             <fieldset>
                 <div class="col-md">
                     <div class="container-fluid-md">
@@ -55,7 +55,7 @@
                     @for($i = 0; $i < 1; $i++)
                         <label for="alt1"></label>
                         <input type="radio" id="alt1" name="alt_cert" value="0" required></input>
-                        <input class="container-fluid box" type="text" name="alt_txt[]" data-pos="0" required value="{{}}"><br></input>
+                        <input class="container-fluid box" type="text" name="alt_txt[]" data-pos="0" required value=""><br></input>
 
                         <label for="alt2"></label>
                         <input type="radio" id="alt2" name="alt_cert" value="1" required></input>

@@ -69,6 +69,7 @@ Route::middleware('autenticacao:estudante')->group(function () {
     Route::post('/play/assunto', [PlayController::class, 'assunto']);
     Route::get('/sortear', [PlayController::class, 'sortearAll']);
     Route::post('/sortear/especifico', [PlayController::class, 'sortearEspecifico']);
+    Route::post('/play/pontuar', [PlayController::class, 'pontuar']);
     
     Route::get('/historico', [MatcheController::class, 'index']);
 });

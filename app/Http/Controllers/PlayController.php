@@ -22,16 +22,27 @@ class PlayController extends Controller
     public function assunto(Request $request){
         $ids = $request->temas; //pega os ids dos temas escolhidos
         $result = ["ids" => $ids];//resultado vai seo array dos ids escolhidos
-        return view('playQ', $result);///Retornar o array para a view playQ    
+        return view('playQ', compact('result'));///Retornar o array para a view playQ    
     }
 
     public function sortearEspecifico(Request $request)
     {
-        //$qtd = Quest::count();
-        $query = Quest::with(['alternatives', 'theme', 'theme.discipline'])
-        ->join('themes','themes.id', '=', 'quests.theme_id')
-        ->select('quests.*');
-        $ids = $request->json('ids');
-        return $ids;
-    }    
+        $ids = $request->ids;
+        $query = Quest::with(['alternatives', 'theme', 'theme.discipline']);
+        foreach ($ids as $id)
+        {
+            $query->orWhere('theme_id', $id);
+        }
+        $qtd = $query->count();
+        $result = $query->get()->random($qtd >= 12 ? 12 : $qtd)->shuffle();
+        return $result;
+    } 
+    
+    public function pontuar(Request $request)
+    {
+        $usuario = session()->get('usuario');
+        $usuario->xp += $request->pontos;
+        $usuario->save();
+        return true;
+    }
 }

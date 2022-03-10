@@ -1,6 +1,7 @@
 $(function () {
     quests = null;
     current = 0;
+    pontos = 0;
     vidas = 3;
     time = null;
     timer = null;
@@ -16,7 +17,7 @@ $(function () {
     }
     else
     {
-        $.post('/sortear/especifico', {'ids[]' : assuntos.ids, '_token' : $("#_token").data('value')}, function (data) {
+        $.post('/sortear/especifico', {'ids' : assuntos.ids, '_token' : $("#_token").data('value')}, function (data) {
             quests = data;
             feedQuest();
         }, 'json');
@@ -27,7 +28,7 @@ $(function () {
             alert("Você acertou, parabéns!");
             contAcertos++;
             pontuar(quests[current].dificulty);
-            // pontuar
+            console.log(pontos);
         }
         else {
             alert('Você errou, tente outra vez.');
@@ -55,14 +56,21 @@ function feedQuest() {
             $('button[data-pos="' + i + '"]').html(quests[current].alternatives[i].texto)
 
         }
-
         changeStyle();
         startTimer();
     }
     else {
-        alert("Você respondeu todas as perguntas!\nAcertou: " + contAcertos + " Perguntas, parabéns!")
-        window.location.replace('/');
-        
+        $.post('/play/pontuar', {'pontos' : pontos, '_token' : $("#_token").data('value')}, function(data){
+            if (data == true)
+            {
+                alert("Você respondeu todas as perguntas!\nAcertou: " + contAcertos + " Perguntas, parabéns!")
+            }
+            else
+            {
+                alert("Erro ao adicionar pontos, contate o administrador.");
+            }
+            window.location.replace('/');
+        }, 'json');
     }
 }
 
@@ -70,10 +78,8 @@ function lostQuestion() {
     vidas--;
     $('#vidas').find("img:first-child").remove();
     if (vidas == 0) {
-
         alert("Você gastou todas suas vidas! Mais sorte na próxima vez!");
         window.location.replace('/');
-        
     }
 }
 
@@ -110,19 +116,18 @@ function translateDificulty(number) {
             return 'Difícil';
             break;
     }
+}
 
-    function pontuar(number) {
-        pontos = 0;
-        switch (number) {
-            case 1:
-                return pontos += 10;
-                break;
-            case 2:
-                return pontos += 20;
-                break;
-            case 3:
-                return pontos += 30;
-                break;
-        }     
+function pontuar(number) {
+    switch (number) {
+        case 1:
+            pontos += 10;
+            break;
+        case 2:
+            pontos += 20;
+            break;
+        case 3:
+            pontos += 30;
+            break;
     }
-}   
+}
