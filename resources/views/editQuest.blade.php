@@ -10,9 +10,9 @@
 <main class="container-fluid-md" style="padding-top:20px;">
     <div class="row">
 
-        <form action="/quest/update/{{$pergunta->id}}" method="POST" autocomplete="off" class="container-fluid">
+        <form action="/quest/update" method="POST" autocomplete="off" class="container-fluid">
             @csrf
-            @method('PUT')  
+            <input type="hidden" name="id" value="{{ $pergunta->id }}"> 
             <fieldset>
                 <div class="col-md">
                     <div class="container-fluid-md">
@@ -28,11 +28,13 @@
                         <div>
                             <select id="matSel" class="select" required>
                                 <option value="">Selecione...</option>
-
                                 @foreach($disciplinas as $disciplina)
-                                <option value="{{ $disciplina->id }}">{{ $disciplina->name }}</option>
+                                <option value="{{ $disciplina->id }}"
+                                @if($disciplina->id == $pergunta->theme->discipline->id)
+                                     selected="selected"
+                                @endif
+                                >{{ $disciplina->name }}</option>
                                 @endforeach
-
                             </select>
                         </div>
 
@@ -42,6 +44,13 @@
 
                                 <select name="tema_id" class="select" required>
                                     <option value="">Selecione...</option>
+                                    @foreach($pergunta->theme->discipline->temas as $theme)
+                                    @if($theme->id == $pergunta->theme->id)
+                                        <option value="{{ $theme->id }}" selected="selected">{{ $theme->theme }}</option>
+                                    @else
+                                        <option value="{{ $theme->id }}" >{{ $theme->theme }}</option>
+                                    @endif
+                                    @endforeach
                                 </select>
                             </div>
                     </div>
@@ -52,23 +61,16 @@
                         <label>Alternativas da sua pergunta: * (Selecione apenas o botão da resposta correta)</label>
                         <br>
 
-                    @for($i = 0; $i < 1; $i++)
+                    @foreach($pergunta->alternatives as $alt)
                         <label for="alt1"></label>
-                        <input type="radio" id="alt1" name="alt_cert" value="0" required></input>
-                        <input class="container-fluid box" type="text" name="alt_txt[]" data-pos="0" required value=""><br></input>
-
-                        <label for="alt2"></label>
-                        <input type="radio" id="alt2" name="alt_cert" value="1" required></input>
-                        <input class="container-fluid box" type="text" name="alt_txt[]" data-pos="1" required><br></input>
-
-                        <label for="alt3"></label>
-                        <input type="radio" id="alt3" name="alt_cert" value="2" required></input>
-                        <input class="container-fluid box" type="text" name="alt_txt[]" data-pos="2" required><br></input>
-
-                        <label for="alt4"></label>
-                        <input type="radio" id="alt4" name="alt_cert" value="3" required></input>
-                        <input class="container-fluid box" type="text" name="alt_txt[]" data-pos="3" required><br></input>
-                    @endfor
+                        <input type="radio" id="alt1" name="alt_cert" value="{{ $alt->id }}" required
+                        @if ($alt->isTrue)
+                        checked="checked"
+                        @endif
+                        ></input>
+                        <input type="hidden" name="alt_id[]" value="{{ $alt->id }}">
+                        <input class="container-fluid box" type="text" name="alt_txt[]" data-pos="0" required value="{{ $alt->texto }}"><br></input>
+                    @endforeach
                     </div>
                 </div>
 

@@ -26,38 +26,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <script src="/js/scriptQuest.js"></script>
     <script src="/js/editor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('editor1');
+    </script>
+    <script src="/js/editQuest.js"></script>
 </body>
-
-<script>
-    CKEDITOR.replace('editor1');
-</script>
-
-<script>
-    $(function(){
-        $("#assuntos").hide();
-
-        $("#matSel").on('change', function(){
-            var select_default = $("<option>").val("").html("Selecione...");
-            if ($(this).val() === '') {
-                $("#assuntos").hide();
-            } else {
-                var select = $("select[name=tema_id]");
-                select.empty();
-                select.append(select_default);
-                $.ajax({
-                    url : "/temas/listar/" + $(this).val(),
-                    success : function(data) {
-                        data.forEach(function(obj) {
-                            select.append($("<option>").val(obj.id).html(obj.theme));
-                        });
-                        $("#assuntos").show();
-                    },
-                    type : 'GET',
-                    dataType : 'json'
-                });
-            }
-        });
-    });
-    //autocomplete(document.getElementById("myInput"), assuntos);
-</script>
 </html>

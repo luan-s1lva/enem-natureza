@@ -29,7 +29,7 @@
 
             </select>
 
-            <div id="assuntos" class="form-group">
+            <div id="assuntos" style="display:none;" class="form-group">
                 <label for="assuntos">Assuntos da matéria relacionada: *</label>
                 <select name="tema_id" class="select" required>
                     <option value="">Selecione...</option>

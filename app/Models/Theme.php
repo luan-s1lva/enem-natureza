@@ -11,9 +11,6 @@ class Theme extends Model
     protected $fillable = [
         'theme',
     ];
-    protected $hidden = [
-        'idTema'
-    ];
 
     public function discipline(){
         

@@ -11,9 +11,6 @@ class Discipline extends Model
     protected $fillable = [
         'name'
     ];
-    protected $hidden = [
-        'idDisciplina'
-    ];
 
     public function temas(){
 

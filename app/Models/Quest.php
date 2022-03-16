@@ -15,11 +15,6 @@ class Quest extends Model
     ];
 
     protected $guarded = [];
-    
-    protected $hidden = [
-        'id', 
-        'teacher_id'
-    ];
 
     public function theme()
     {
