@@ -33,7 +33,7 @@ class Quest extends Model
 
     public function matche(){
 
-        return $this->belongsToMany(Matche::class);
+        return $this->belongsToMany(Matche::class)->withPivot('acertou');
     }
 
 }

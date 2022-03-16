@@ -19,6 +19,6 @@ class Matche extends Model
 
     public function quests(){
 
-      return $this->belongsToMany(Quest::class);
+      return $this->belongsToMany(Quest::class)->withPivot('acertou');
     }
 }

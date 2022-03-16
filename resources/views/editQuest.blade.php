@@ -81,13 +81,25 @@
                     <div class="container-fluid-md">
                         <label>Dificuldade: *</label><br>
 
-                        <input type="radio" value="1" id="altFa" name="dificulty" required >
+                        <input type="radio" value="1" id="altFa" name="dificulty" 
+                        @if($pergunta->dificulty == 1)
+                        checked="checked"
+                        @endif
+                        required >
                         <label for="altFa">Fácil</label><br>
 
-                        <input type="radio" value="2" id="altMe" name="dificulty" required>
+                        <input type="radio" value="2" id="altMe" name="dificulty" 
+                        @if($pergunta->dificulty == 2)
+                        checked="checked"
+                        @endif
+                        required>
                         <label for="altMe">Médio</label><br>
 
-                        <input type="radio" value="3" id="altDi" name="dificulty" required>
+                        <input type="radio" value="3" id="altDi" name="dificulty" 
+                        @if($pergunta->dificulty == 3)
+                        checked="checked"
+                        @endif
+                        required>
                         <label for="altDi">Difícil</label><br>
                     </div>
                 </div>

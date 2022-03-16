@@ -1,5 +1,7 @@
 $(function () {
     quests = null;
+    acertou = false;
+    responses = [];
     current = 0;
     pontos = 0;
     vidas = 3;
@@ -29,11 +31,13 @@ $(function () {
             contAcertos++;
             pontuar(quests[current].dificulty);
             console.log(pontos);
+            responses.push([quests[current].id, 1]);
         }
         else {
             alert('Você errou, tente outra vez.');
             lostQuestion();
         }
+        console.log(responses);
         nextQuestion();
     });
 });
@@ -54,13 +58,12 @@ function feedQuest() {
         $('#titulo').html(quests[current].textQuest);
         for (i = 0; i < 4; i++) {
             $('button[data-pos="' + i + '"]').html(quests[current].alternatives[i].texto)
-
         }
         changeStyle();
         startTimer();
     }
     else {
-        $.post('/play/pontuar', {'pontos' : pontos, '_token' : $("#_token").data('value')}, function(data){
+        $.post('/play/pontuar', {'pontos' : pontos, 'responses' : responses, '_token' : $("#_token").data('value')}, function(data){
             if (data == true)
             {
                 alert("Você respondeu todas as perguntas!\nAcertou: " + contAcertos + " Perguntas, parabéns!")
@@ -76,6 +79,7 @@ function feedQuest() {
 
 function lostQuestion() {
     vidas--;
+    responses.push([quests[current].id, 0]);
     $('#vidas').find("img:first-child").remove();
     if (vidas == 0) {
         alert("Você gastou todas suas vidas! Mais sorte na próxima vez!");

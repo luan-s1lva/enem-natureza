@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Quest;
 use App\Models\Alternative;
+use App\Models\Matche;
+use Carbon\Carbon;
 
 class PlayController extends Controller
 {
@@ -42,6 +44,14 @@ class PlayController extends Controller
     {
         $usuario = session()->get('usuario');
         $usuario->xp += $request->pontos;
+        
+        $partida = new Matche(['horario' => Carbon::now()]);
+        $usuario->matches()->save($partida);
+
+        for($i = 0; $i < sizeof($request->responses); $i++){
+            $partida->quests()->attach($request->responses[$i][0], ['acertou' => $request->responses[$i][1]]);
+        }
+
         $usuario->save();
         return true;
     }

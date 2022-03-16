@@ -72,7 +72,24 @@ class QuestController extends Controller
 
     public function update(Request $request)
     {
-        Quest::find($request->id)->update($request->all());
+        $pergunta = Quest::find($request->id);
+        $pergunta->textQuest = $request->editor1;
+        $pergunta->dificulty = $request->dificulty;
+        $pergunta->theme_id = $request->tema_id;
+        $pergunta->save();
+
+        for($i = 0; $i < sizeof($request->alt_id); $i++){
+            $alternativa = Alternative::find($request->alt_id[$i]);
+            $alternativa->texto = $request->alt_txt[$i];
+
+            if($request->alt_cert == $alternativa->id){
+                $alternativa->isTrue = true;
+            }else{
+                $alternativa->isTrue = false;
+            }
+
+            $alternativa->save();
+        }
 
         return redirect('/suasPerguntas')->with('msg', 'Pergunta editada com sucesso!');
     }

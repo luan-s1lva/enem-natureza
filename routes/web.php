@@ -50,7 +50,7 @@ Route::middleware('autenticacao:professor')->group(function () {
 
     Route::get('/editar/pergunta/{id}', [QuestController::class, 'edit']);
     
-    Route::post('/quest/update/{{$pergunta->id}}', [QuestController::class, 'update']);
+    Route::post('/quest/update', [QuestController::class, 'update']);
 
     Route::get('/listarPerguntas', [QuestController::class, 'listarPerguntas']);
 });
