@@ -9,7 +9,8 @@ class Matche extends Model
 {
     use HasFactory;
     protected $fillable = [
-      'horario',  
+      'horario',
+      'student_id'  
     ];
 
     public function student(){

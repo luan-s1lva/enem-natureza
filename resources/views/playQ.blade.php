@@ -31,6 +31,10 @@
                 <img src="/img/heart.gif" alt="imagem de um coração" style="height:80px;">
             </div>
 
+            <audio autoplay id="audio">
+                <source src="/sound/enemNatureza2.mp3" type="audio/mp3">
+            </audio>
+
         </header>
 
             <!--Pergunta-->

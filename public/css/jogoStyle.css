@@ -34,12 +34,12 @@ footer a {
 }
 
 img {
-    margin-left: 12px;
+    width: auto;
 }
 
 button {
     width: 70%;
-    height: 80px;
+    height: 100px;
     background-color: white;
     margin-bottom: 12px;
     border-radius: 22px;
@@ -54,7 +54,6 @@ button:hover {
 }
 
 button:focus {
-    background-color: rgba(21, 255, 0, 0.712);
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }

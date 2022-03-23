@@ -40,6 +40,8 @@ $(function () {
         console.log(responses);
         nextQuestion();
     });
+
+    document.getElementById('audio').volume = 1;
 });
 
 function changeStyle() {
