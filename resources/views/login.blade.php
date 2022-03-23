@@ -42,14 +42,14 @@
                         <br>
                         <label for="txt_email">E-mail: </label>
                         <br>
-                        <input type="email" class="campo container" id="txt_email" name="email" placeholder="Ex: aluno@gmail.com">
+                        <input type="email" class="campo container" id="txt_email" name="email" placeholder="Digite seu email">
                     </div>
 
                     <div>
                         <br>
                         <label for="txt_password">Senha:</label>
                         <br>
-                        <input style="display:inline" type="password" class="campo container" id="txt_password" name="password" placeholder="Ex: user123">
+                        <input style="display:inline" type="password" class="campo container" id="txt_password" name="password" placeholder="Digite sua senha">
                         <img id="senhaImg" src="/img/mostrarSenha.png" class="img-fluid" alt="Mostrar Senha">
                         <input type="button" id="showPassword" value="Mostrar Senha" class="button"/>
                     </div>
