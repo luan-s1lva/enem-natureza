@@ -1,7 +1,7 @@
 @extends('layouts.telas')
 @section('css', '/css/alunoStyle.css')
 @section('content')
-<?php 
+<?php
 $tamanho = ($usuario->xp % 500) * 100 / 500;
 ?>
 <header class="container text-center">
@@ -12,13 +12,14 @@ $tamanho = ($usuario->xp % 500) * 100 / 500;
     <hr>
     <h3>Seu Nível: {{ (int) ($usuario->xp / 500) }}</h3>
     <hr>
-    <h3>Pontos de experiência totais para passar de nível: <p id='dentroBar'>{{ ($usuario->xp % 500) }} / 500</p></h3>
-    
+    <h3>Pontos de experiência totais para passar de nível: <p id='dentroBar'>{{ ($usuario->xp % 500) }} / 500</p>
+    </h3>
+
     <div class="progress" style="height:35px; border: 2px solid white;">
-        <div class="progress-bar" style="width:<?php echo $tamanho ?>%;" role="progressbar"  aria-valuemin="0" aria-valuenow="{{$usuario->xp %500}}" aria-valuemax="500">
+        <div class="progress-bar" style="width:<?php echo $tamanho ?>%;" role="progressbar" aria-valuemin="0" aria-valuenow="{{$usuario->xp %500}}" aria-valuemax="500">
         </div>
     </div>
-        
+
 
     </div>
 </header>
