@@ -6,63 +6,34 @@
 </header>
 
 <main>
+    @foreach($professores as $professor)
     <hr>
     <div class="container-fluid">
         <div id="campo" class="text-center ">
             <div>
-                <p><b>Nome: </b>João Quintiliano de Souza Pontes</p>
+                <p><b>Nome:</b> {{$professor->name}}</p>
             </div>
             <div>
-                <p><b>Org: </b>Instituto Federal do Rio Grande do Norte</p>
+                <p><b>Org:</b> {{$professor->org}}</p>
             </div>
             <div>
-                <p><b>Lattes:</b> https://www.lattesdousuario.com.br</p>
+                <p><b>Lattes:</b> {{$professor->lattes}}</p>
             </div>
         </div>
-        <div class="text-center container">
-            <button> <img class="icon img-fluid " src="/img/aprovar.png" alt="Icone retirado do: https://www.flaticon.com/br/"></button>
-            <button> <img class="icon img-fluid " src="/img/recusado.png" alt="Icone retirado do: https://www.flaticon.com/br/"></button>
-        </div>
+        <form action="/validar/update" method="POST">
+            @csrf
+            <input type="hidden" name="id" value="{{$professor->id}}">
+            <div class="text-center container">
+
+                <button name="isValidado" value="1"><img class="icon img-fluid " src="/img/aprovar.png" alt="Icone retirado do: https://www.flaticon.com/br/"></button>
+
+                <button name="isValidado" value="0"><img class="icon img-fluid " src="/img/recusado.png" alt="Icone retirado do: https://www.flaticon.com/br/"></button>
+
+            </div>
+        </form>
     </div>
     <hr>
-    <hr>
-    <div class="container-fluid">
-        <div id="campo" class="text-center ">
-            <div>
-                <p><b>Nome: </b>João Quintiliano de Souza Pontes</p>
-            </div>
-            <div>
-                <p><b>Org: </b>Instituto Federal do Rio Grande do Norte</p>
-            </div>
-            <div>
-                <p><b>Lattes:</b> https://www.lattesdousuario.com.br</p>
-            </div>
-        </div>
-        <div class="text-center container">
-            <button> <img class="icon img-fluid " src="/img/aprovar.png" alt="Icone retirado do: https://www.flaticon.com/br/"></button>
-            <button> <img class="icon img-fluid " src="/img/recusado.png" alt="Icone retirado do: https://www.flaticon.com/br/"></button>
-        </div>
-    </div>
-    <hr>
-    <hr>
-    <div class="container-fluid">
-        <div id="campo" class="text-center ">
-            <div>
-                <p><b>Nome: </b>João Quintiliano de Souza Pontes</p>
-            </div>
-            <div>
-                <p><b>Org: </b>Instituto Federal do Rio Grande do Norte</p>
-            </div>
-            <div>
-                <p><b>Lattes:</b> https://www.lattesdousuario.com.br</p>
-            </div>
-        </div>
-        <div class="text-center container">
-            <button> <img class="icon img-fluid " src="/img/aprovar.png" alt="Icone retirado do: https://www.flaticon.com/br/"></button>
-            <button> <img class="icon img-fluid " src="/img/recusado.png" alt="Icone retirado do: https://www.flaticon.com/br/"></button>
-        </div>
-    </div>
-    <hr>
+    @endforeach
 </main>
 
 

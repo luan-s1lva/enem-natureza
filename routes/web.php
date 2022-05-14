@@ -24,7 +24,8 @@ use App\Http\Controllers\RankingController;
 use App\Http\Controllers\SolicitacionsController;
 use App\Http\Controllers\PlayController;
 use App\Http\Controllers\CreateQuizController;
-
+use App\Http\Controllers\AjudaController;
+use Illuminate\Support\Facades\Mail;
 
 Route::get('/', [LoginController::class, 'index']);
 
@@ -40,6 +41,8 @@ Route::post('/teacher/store', [TeacherController::class, 'store']);
 
 Route::post('/quest/store', [QuestController::class, 'store']);
 
+Route::get('/ajuda', [AjudaController::class, 'index']);
+
 Route::middleware('autenticacao:professor')->group(function () {
 
     Route::get('/criarPergunta', [QuestController::class, 'index']);
@@ -49,7 +52,7 @@ Route::middleware('autenticacao:professor')->group(function () {
     Route::get('/suasPerguntas', [QuestController::class, 'listar_perguntasProf']);
 
     Route::get('/editar/pergunta/{id}', [QuestController::class, 'edit']);
-    
+
     Route::post('/quest/update', [QuestController::class, 'update']);
 
     Route::get('/listarPerguntas', [QuestController::class, 'listarPerguntas']);
@@ -57,7 +60,7 @@ Route::middleware('autenticacao:professor')->group(function () {
 
 Route::middleware('autenticacao:estudante')->group(function () {
 
-    Route::get('/assuntos/listar/{idDiscipline}' , [CreateQuizController::class, 'mostrarAssuntos']);
+    Route::get('/assuntos/listar/{idDiscipline}', [CreateQuizController::class, 'mostrarAssuntos']);
 
     Route::get('/estudante/{id}', [StudentController::class, 'show']);
 
@@ -70,11 +73,12 @@ Route::middleware('autenticacao:estudante')->group(function () {
     Route::get('/sortear', [PlayController::class, 'sortearAll']);
     Route::post('/sortear/especifico', [PlayController::class, 'sortearEspecifico']);
     Route::post('/play/pontuar', [PlayController::class, 'pontuar']);
-    
+
     Route::get('/historico', [MatcheController::class, 'mostrar']);
 });
 
 Route::middleware('autenticacao:admin')->group(function () {
 
-    Route::get('/solicitacoes', [SoliciacionsController::class, 'index']);
+    Route::get('/solicitacoes', [AdminController::class, 'solicitacoes']);
+    Route::post('/validar/update', [AdminController::class, 'validar']);
 });
