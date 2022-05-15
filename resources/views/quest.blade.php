@@ -1,7 +1,5 @@
 @extends('layouts.telaQuest')
 @section('css', '/css/questStyle.css')
-
-
 @section('content')
 <header>
     <h1 class="fundo">Crie sua pergunta</h1>
@@ -24,7 +22,7 @@
                 <option value="">Selecione...</option>
 
                 @foreach($disciplinas as $disciplina)
-                <option value="{{ $disciplina->id }}">{{ $disciplina->name }}</option>
+                    <option value="{{ $disciplina->id }}">{{ $disciplina->name }}</option>
                 @endforeach
 
             </select>

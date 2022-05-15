@@ -58,7 +58,7 @@ class QuestController extends Controller
 
     public function listarPerguntas()
     {
-        return view('salvasQuests',['perguntas' => Quest::all()]);
+        return view('salvasQuests', ['disciplinas' => Discipline::all(), 'perguntas' => Quest::all()]);
     }
 
     public function edit($id)
