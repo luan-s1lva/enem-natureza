@@ -13,7 +13,7 @@
 <main class="container">
     <div class="row-cols-1">
         <div class="botoes">
-            <button class="col"><img class="icons" src="/img/lupa.png" alt="Icone feito por https://www.freepik.com no Flaticon">Visualizar Solicitações</button>
+            <a href="/solicitacoes"> <button class="col"><img class="icons" src="/img/lupa.png" alt="Icone feito por https://www.freepik.com no Flaticon">Visualizar Solicitações</button></a>
         </div>
         <div class="botoes">
             <a href="/logout"> <button class="col"><img class="icons" src="/img/logout.png" alt="Icone feito por https://www.freepik.com no Flaticon"> Logout</button></a>

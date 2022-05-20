@@ -12,18 +12,22 @@ class MatcheController extends Controller
         return view("matches");
     }
 
-    public function mostrar()
+   /* public function mostrar()
     {
         $user = session()->get('usuario')->id;
-        //$horas = Matche::where('student_id', $user)->take(1)->get();
         $partidas = Matche::where('student_id', $user)->orderBy('horario', 'desc')->get();
-        /*$certas = count(
-            foreach(){
-                quests()->pivot
-            }
-        );*/
-        //dd($certas);
-
         return view('matches', compact('partidas'));
+    }*/
+    
+    public function mostrarPartidas()
+    {
+        $user = session()->get('usuario')->id;
+        $partidas = Matche::where('student_id', $user)->get();
+       
+        foreach ($partidas as $partida) {
+            $acertos = $partida->quests()->wherePivot('acertou', true)->count();
+        };
+
+        return $partidas;
     }
 }

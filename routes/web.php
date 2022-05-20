@@ -74,7 +74,8 @@ Route::middleware('autenticacao:estudante')->group(function () {
     Route::post('/sortear/especifico', [PlayController::class, 'sortearEspecifico']);
     Route::post('/play/pontuar', [PlayController::class, 'pontuar']);
 
-    Route::get('/historico', [MatcheController::class, 'mostrar']);
+    Route::get('/historico', [MatcheController::class, 'index']);
+    Route::get('/historico/listar/partidas',[MatcheController::class, 'mostrarPartidas']);
 });
 
 Route::middleware('autenticacao:admin')->group(function () {
