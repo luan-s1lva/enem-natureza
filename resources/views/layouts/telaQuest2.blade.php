@@ -29,6 +29,6 @@
     <script>
         CKEDITOR.replace('editor1');
     </script>
-    <script src="/js/editQuest2.js"></script>
+    <!-- <script src="/js/editQuest2.js"></script> -->
 </body>
 </html>

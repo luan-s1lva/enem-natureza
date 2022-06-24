@@ -24,10 +24,13 @@ class MatcheController extends Controller
         $user = session()->get('usuario')->id;
         $partidas = Matche::where('student_id', $user)->get();
        
-        foreach ($partidas as $partida) {
-            $acertos = $partida->quests()->wherePivot('acertou', true)->count();
-        };
+        $acertou = 0;
+        $errou = 0;
 
-        return $partidas;
+        foreach($partidas as $partida) {
+            $acertou+=$partida->quests()->wherePivot('acertou', true)->count();
+            $errou+=$partida->quests()->wherePivot('acertou', false)->count();
+        }
+        return ["acertos" => $acertou, "erros" => $errou];
     }
 }

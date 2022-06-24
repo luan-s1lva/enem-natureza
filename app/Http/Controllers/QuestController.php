@@ -58,7 +58,25 @@ class QuestController extends Controller
 
     public function listarPerguntas()
     {
-        return view('salvasQuests', ['disciplinas' => Discipline::all(), 'perguntas' => Quest::all()]);
+        return view('salvasQuests');
+    }
+
+    public function listarPerguntasFiltradas($idDiscipline)
+    {
+        // console.log('teste');
+        $discipline = Discipline::find($idDiscipline);
+        // dd($discipline);
+        $result = [];
+        if ($discipline != null) {
+            $temas = $discipline->temas()->where('discipline_id', $idDiscipline)->get();
+            foreach($temas as $tema) {
+                $perguntas = $tema->perguntas;
+                foreach($perguntas as $pergunta) {
+                    array_push($result, $pergunta);
+                }
+            }
+        }
+        return $result;
     }
 
     public function edit($id)

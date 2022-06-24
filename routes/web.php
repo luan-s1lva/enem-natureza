@@ -56,6 +56,8 @@ Route::middleware('autenticacao:professor')->group(function () {
     Route::post('/quest/update', [QuestController::class, 'update']);
 
     Route::get('/listarPerguntas', [QuestController::class, 'listarPerguntas']);
+
+    Route::get('/listar/Perguntas/{idDiscipline}', [QuestController::class, 'listarPerguntasFiltradas']);
 });
 
 Route::middleware('autenticacao:estudante')->group(function () {
