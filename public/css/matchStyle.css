@@ -2,7 +2,6 @@ body {
     font-family: 'Roboto', sans-serif;
     background-image: url('/img/backG.png');
     background-size: 100%;
-    width: 100%;
 }
 
 header {
@@ -20,6 +19,14 @@ h1 {
     font-weight: 900;
 }
 
+h2 {
+    font-size: 15pt;
+    font-weight: bold;
+    color: rgba(27, 116, 68, 0.6);
+    text-align: center;
+}
+
+
 button {
     font-size: 15px;
     padding: 5px;
@@ -34,17 +41,6 @@ button:hover {
     color: white;
 }
 
-h2 {
-    font-size: 18pt;
-    font-weight: 700;
-    color:rgba(19, 92, 53, 0.808);
-
-}
-
-p {
-    font-weight: bolder;
-    color:rgba(19, 92, 53, 0.808);
-}
 
 footer {
     background-color: white;
@@ -57,14 +53,10 @@ footer a {
     margin-bottom: 35px;
 }
 
-#partida {
-    padding-top: 20px;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-#cardCorpo h2 {
-    padding-top: 10px;
+.grafico {
+    padding: 15px;
+    text-align: center;
+    background-color: white;
+    border-radius: 15px;
+    width: 30%;
 }

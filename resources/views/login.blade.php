@@ -57,7 +57,7 @@
                     <div class="text-center">
 
                         <button class="botao" type="submit">Logar</button>
-                        <button class="botao"><a href="/cadastro">Cadastrar</a></button>
+                        <button class="botao" type="button"><a href="/cadastro">Cadastrar</a></button>
 
                     </div>
                 </form>

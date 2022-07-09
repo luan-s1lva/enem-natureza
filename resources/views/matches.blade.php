@@ -15,12 +15,12 @@
         <h1>Histórico de Partidas</h1>
     </header>
     <div class="voltar"><a href="/"><button>Voltar</button></a></div>
+
     <main>
-        
-        <div style="width:60%; margin:auto;">
 
-            <canvas class="line-chart"></canvas>
-
+        <div class="grafico container">
+            <h2>Estatísticas Gerais: </h2>
+            <canvas class="pizza"></canvas>
         </div>
 
     </main>

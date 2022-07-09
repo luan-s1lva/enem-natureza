@@ -44,10 +44,10 @@
                 <input type="text" class="campo form-control" id="txt_org" name="org" placeholder="Digite o nome da sua instituição" required>
             </div>
 
-            <!--div class="form-group">
+            <div class="form-group">
                 <label for="file_img">Foto de Perfil: </label>
                 <input type="file" class="form-control-file" id="file_img" name="img" required>
-            </div>-->
+            </div>
 
             <div class="form-group">
                 <label for="txt_email">E-mail: </label>

@@ -1,12 +1,10 @@
 $(function () {
-    partidas = null;
-    current = 0;
     $.get('/historico/listar/partidas', function (data) {
         graph(data.acertos, data.erros);
     }, 'json');
 
     function graph(acertos, erros) {
-        var ctx = document.getElementsByClassName("line-chart");
+        var ctx = document.getElementsByClassName("pizza");
         var chartGraph = new Chart(ctx, {
             type: 'pie',
             data: {

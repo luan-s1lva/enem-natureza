@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\Teacher;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
@@ -16,8 +17,9 @@ class StudentController extends Controller
 
     public function store(Request $request)
     {
+        $professores = new Teacher;
         $estudantes = new Student;
-        if ($estudantes::where('email', $request->email)->first()) {
+        if ($estudantes::where('email', $request->email)->first() || $professores::where('email', $request->email)->first()) {
             return redirect('/cadastro')->with('msg2', 'O email inserido já foi cadastrado nessa plataforma! Tente Novamente com outro Email. ');
         } else {
             $estudantes->email = $request->email;
@@ -33,7 +35,7 @@ class StudentController extends Controller
                 $request->img->move(public_path('img/perfil'), $imageName);
                 $estudantes->img = $imageName;
             }
-            Mail::send(new \App\Mail\newEstudante($estudantes));
+          //  Mail::send(new \App\Mail\newEstudante($estudantes));
             $estudantes->save();
 
             return redirect('/')->with('msg', 'Aluno cadastrado com sucesso!');
