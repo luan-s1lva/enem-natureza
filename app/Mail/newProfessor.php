@@ -30,7 +30,7 @@ class newProfessor extends Mailable
     // // // //  */
     public function build()
     {
-        $this->subject(subject: 'Confirmação de Cadastro');
+        $this->subject('Confirmação de Cadastro');
         $this->to($this->professor->email, $this->professor->name);
         return $this->view('mail.newProfessor', ['professor' => $this->professor]);
     }

@@ -40,7 +40,7 @@ class TeacherController extends Controller
                 $professor->img = $imageName;
             }
             $professor->save();
-          //  Mail::send(new \App\Mail\newProfessor($professor));
+                 Mail::send(new \App\Mail\newProfessor($professor));
             return redirect('/')->with('msg', 'Professor cadastrado com sucesso! Aguarde o sistema confirmar sua identidade!');
         }
     }

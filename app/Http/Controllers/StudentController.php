@@ -35,7 +35,7 @@ class StudentController extends Controller
                 $request->img->move(public_path('img/perfil'), $imageName);
                 $estudantes->img = $imageName;
             }
-          //  Mail::send(new \App\Mail\newEstudante($estudantes));
+            Mail::send(new \App\Mail\newEstudante($estudantes));
             $estudantes->save();
 
             return redirect('/')->with('msg', 'Aluno cadastrado com sucesso!');
